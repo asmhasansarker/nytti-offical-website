@@ -1,0 +1,9 @@
+.navItem{
+    margin-left: 100px;
+}
+
+@media screen and (max-width: 991px) {
+    .navItem{
+        margin-left: 0px;
+    }
+  }

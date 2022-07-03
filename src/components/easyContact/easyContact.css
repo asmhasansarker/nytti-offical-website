@@ -1,0 +1,10 @@
+.custom-easyContact{
+    display:block;
+}
+
+@media screen and (max-width: 991px) {
+    .custom-easyContact{
+        display: none;
+    }
+    
+  }
