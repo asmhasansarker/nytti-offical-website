@@ -1,22 +1,15 @@
-import Banner from "./components/Banner/Banner";
-import CourseSlider from "./components/courseSlider/CourseSlider";
-import BackgroundImage from "./components/custom/background/BackgroundImage";
-import EasyContact from "./components/easyContact/easyContact";
-import Navigation from "./components/navigation/navigation";
-import PopularCourses from "./components/popularCourses/PopularCourses";
+import React from "react";
+import Home from "./Home";
+import { Routes, Route } from "react-router-dom";
+import Courses from "./components/courses/courses";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <EasyContact/>
-      <BackgroundImage>
-        <Navigation/>
-        <Banner/>
-        <CourseSlider/>
-      </BackgroundImage>
-      <PopularCourses/>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/courses" element={<Courses />} />
+    </Routes>
   );
-}
+};
 
 export default App;

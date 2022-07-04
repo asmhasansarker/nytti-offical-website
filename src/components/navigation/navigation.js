@@ -1,21 +1,24 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import './navigation.css'
 
 function Navigation() {
+  
+
   return (
     <Navbar collapseOnSelect expand="lg"  variant="light">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">NYTTI</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#features" className="navItem">Features</Nav.Link>
-            <Nav.Link href="#pricing" className="navItem">Pricing</Nav.Link>
-            <Nav.Link href="#pricing" className="navItem">Contact</Nav.Link>
-            <Nav.Link href="#pricing" className="navItem">Course</Nav.Link>
+            <NavLink to="/courses"  className="navItem"> Home </NavLink>
+            <Nav.Link href="#pricing" className="navItem">Courses</Nav.Link>
+            <Nav.Link href="#pricing" className="navItem">About Us</Nav.Link>
+            <Nav.Link href="#pricing" className="navItem">Contact Us</Nav.Link>
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
