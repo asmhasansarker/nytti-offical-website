@@ -5,7 +5,7 @@ import PopularCourseSlider from "../PopularCourseSlider/PopularCourseSlider";
 const PopularCourses = () => {
   return (
     <div>
-      <div class="px-4 py-5 my-5 text-center">
+      <div class="px-4 py-5  text-center">
         <img
           class="d-block mx-auto mb-4"
           src={courseLogo}

@@ -4,7 +4,7 @@ import bannerOne from '../assets/bannerOne.png'
 
 const Banner = () => {
   return (
-    <div className="container my-5">
+    <div className="container py-5">
       <div className="row my-5">
         <div className="col-5">
           <BannerLeft />
