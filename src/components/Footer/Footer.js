@@ -1,11 +1,21 @@
 import React from "react";
 import "./Footer.css";
 import FooterCol from "../FooterCol/FooterCol";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+  
+} from "@fortawesome/free-brands-svg-icons";
+
 
 import {
   faMapMarkerAlt,
   faMobileAlt,
   faEnvelope,
+  faCopyright,
 } from "@fortawesome/free-solid-svg-icons";
 import ContactDetailsCard from "../ContactDetailsCard/ContactDetailsCard";
 
@@ -16,17 +26,17 @@ const Footer = () => {
   const contactCard = [
     {
       icon: faMapMarkerAlt,
-      title: "1109 Longview Avenue",
-      describe: "New York, United States",
+      title: "Adamjee Tower (2nd Floor)",
+      describe: "Siddhirganj, Narayanganj",
     },
     {
       icon: faMobileAlt,
-      title: "+21 347 678 901",
-      describe: "Mon till Friday: 7:00 till 5:00",
+      title: "+88 019 880 004 44",
+      describe: "Sat till Thu: 8:00 till 5:00",
     },
     {
       icon: faEnvelope,
-      title: "info@thecleaner.com",
+      title: "nytti.bd@gmail.com",
       describe: "We reply within 1 work day",
     },
   ];
@@ -42,12 +52,31 @@ const Footer = () => {
         <div className="row py-5">
           <FooterCol key={1} menuTitle={"About Us"} menuItems={aboutUs}>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              laborum praesentium repellat cum magni cumque alias odit velit
-              corrupti facilis.
+              সরকার স্বীকৃত কারিগরি ও টেকনোলজি ভিত্তিক সংস্থা Gov. Reg. No-
+              S-176/06 রেজিষ্টার্ড অফিস: কলেজপাড়া (ডায়াবেটিক হাসপাতালের পেছনে)
+              গোবিন্দনগর, ঠাকুরগাঁও গাজীপুর অফিস: ব্যাপারী রোড, আউসপাড়া, টঙ্গী,
+              গাজীপুর-1711, বাংলাদেশ
             </p>
-
-            <button className="btn btn-primary">Get This Theme</button>
+            <div className="h6 mb-3">Follow Us on social</div>
+            <div className="d-flex justify-content-between">
+              <div>
+                <a href="www.facebook.com"><FontAwesomeIcon icon={faFacebook} size="2x" color="#4267B2s" className=""/></a>
+              </div>
+              <div>
+                <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2" />
+              </div>
+              <div>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  size="2x"
+                  color="#833AB4
+"
+                />
+              </div>
+              <div>
+                <FontAwesomeIcon icon={faYoutube} size="2x" color="red" />
+              </div>
+            </div>
           </FooterCol>
           <FooterCol
             key={2}
@@ -81,15 +110,15 @@ const Footer = () => {
 
             <h4 className="my-4 font-weight-bold">Working Hours</h4>
             <div className="row my-1">
-              <div className="col-md-6 text-muted">Monday-Friday</div>
-              <div className="col-md-6 font-weight-bold">07:00 - 16:00</div>
+              <div className="col-md-6 text-muted">Sat-Wed</div>
+              <div className="col-md-6 font-weight-bold">08:00 - 17:00</div>
             </div>
             <div className="row my-1 ">
-              <div className="col-md-6 text-muted">Saturday</div>
-              <div className="col-md-6 font-weight-bold">09:00 - 15:00</div>
+              <div className="col-md-6 text-muted">Thursday</div>
+              <div className="col-md-6 font-weight-bold">09:00 - 12:00</div>
             </div>
             <div className="row my-1">
-              <div className="col-md-6 text-muted">Sunday</div>
+              <div className="col-md-6 text-muted">Friday</div>
               <div className="col-md-6 text-primary font-weight-bold">
                 We're Closed
               </div>
@@ -97,7 +126,7 @@ const Footer = () => {
           </FooterCol>
         </div>
         <div className="copyRight text-center ">
-          <p>Copyright {new Date().getFullYear()} All Rights Reserved</p>
+          <p>Copyright <FontAwesomeIcon icon={faCopyright} size="1x" /> {new Date().getFullYear()}  All Rights Reserved By NYTTI</p>
         </div>
       </div>
     </footer>
