@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import AllCourses from "./components/AllCourses/AllCourses";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
+      <Footer/>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import Banner from "./components/Banner/Banner";
 // import CourseSlider from "./components/courseSlider/CourseSlider";
 import BackgroundImage from "./components/custom/background/BackgroundImage";
-import Footer from "./components/Footer/Footer";
 // import EasyContact from "./components/easyContact/easyContact";
 import FreeSeminar from "./components/freeSeminar/freeSeminar";
 // import Navigation from "./components/navigation/navigation";
@@ -18,7 +17,7 @@ function Home() {
       </BackgroundImage>
       <PopularCourses />
       <FreeSeminar />
-      <Footer />
+      
     </div>
   );
 }
