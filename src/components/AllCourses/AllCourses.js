@@ -6,7 +6,7 @@ import msOffice from "../assets/msOfficeMale.jpg";
 import kidsProgramming from "../assets/kidsProgramming.jpg";
 import graphicDesign from "../assets/graphicDesign.jpg";
 import hscICT from "../assets/hscICT.jpg";
-import allCoursesBanner from '../assets/allCoursesBanner.jpg'
+// import allCoursesBanner from '../assets/allCoursesBanner.jpg'
 
 
 const AllCourses = () => {
