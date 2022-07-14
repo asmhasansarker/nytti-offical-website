@@ -18,10 +18,11 @@ const App = () => {
       </BackgroundImage>
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/courses" element={<AllCourses />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/contact-us" element={<ContactUs />} />
+        
+        <Route exact path="/courses" element={<AllCourses />} />
+        <Route exact path="/about-us" element={<AboutUs />} />
+        <Route exact path="/contact-us" element={<ContactUs />} />
+        <Route exact path="/" element={<Home />}></Route>
       </Routes>
       <Footer/>
     </>
