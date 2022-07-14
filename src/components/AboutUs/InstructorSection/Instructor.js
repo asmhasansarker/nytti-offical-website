@@ -5,6 +5,11 @@ import InstructorCard from './InstructorCard';
 const Instructor = () => {
     return (
         <>
+         <div className='card bg-info bg-gradient py-2 mb-3'>
+                <div className=' text-center '>
+                    <h4>CEO</h4>
+                </div>
+            </div>
             <div className="card mb-3" >
                 <div className="row g-0">
                     <div className="col-md-4">
@@ -17,6 +22,11 @@ const Instructor = () => {
 
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className='card bg-info bg-gradient py-2 mb-3'>
+                <div className=' text-center '>
+                    <h4>Manager</h4>
                 </div>
             </div>
             <div className="card mb-3" >
@@ -32,6 +42,11 @@ const Instructor = () => {
                     <div className="col-md-4">
                         <img src={ceoPhoto} className="img-fluid rounded-start" alt="ceoPhoto" />
                     </div>
+                </div>
+            </div>
+            <div className='card bg-info bg-gradient py-2'>
+                <div className=' text-center '>
+                    <h4>Our Instructors</h4>
                 </div>
             </div>
             <div className='row'>

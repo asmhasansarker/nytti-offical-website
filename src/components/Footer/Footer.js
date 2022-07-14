@@ -41,7 +41,7 @@ const Footer = () => {
     },
   ];
   const quickNavigation = [
-    { name: "Home", link: "/home" },
+    { name: "Home", link: "/" },
     { name: "About Us", link: "/about-us" },
     { name: "courses", link: "/courses" },
     { name: "Contact Us", link: "/contact-us" },
