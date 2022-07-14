@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Banner from "./components/Banner/Banner";
 // import CourseSlider from "./components/courseSlider/CourseSlider";
 import BackgroundImage from "./components/custom/background/BackgroundImage";
@@ -7,6 +8,9 @@ import FreeSeminar from "./components/freeSeminar/freeSeminar";
 import PopularCourses from "./components/popularCourses/PopularCourses";
 
 function Home() {
+  useEffect(() => {
+    document.title="NYTTI - National Youth and Technical Training Institude"
+  })
   return (
     <div className="App">
       {/* <EasyContact/> */}

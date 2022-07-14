@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BannerLeft = () => {
   return (
@@ -15,9 +16,12 @@ const BannerLeft = () => {
         </p>
       </div>
       <div>
+        <Link to="/courses">
         <button type="button" class="btn btn-outline-primary me-2 btn-lg">
           Browse Course
         </button>
+        </Link>
+        
         <button type="button" class="btn btn-outline-success btn-lg">
           Join Free Seminar
         </button>

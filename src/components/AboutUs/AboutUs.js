@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import aboutUsPhoto from '../assets/aboutUsPhoto.jpg'
 import Instructor from './InstructorSection/Instructor'
 
 const AboutUs = () => {
+  useEffect(() => {
+    document.title="About Us"
+  })
   return (
     <div className='container'>
       <div className="card mb-3">
         <img src={aboutUsPhoto} className="card-img-top" alt="aboutUsPhoto" />
         <div className="card-body">
-          <h5 className="card-title text-center mb-5">NYTTI - National Youth and Technical Training Institude</h5>
+        <div className='card-title bg-info bg-gradient py-3 mb-3 mt-3 w-100'>
+                <div className=' text-center '>
+                    <h3>NYTTI - National Youth and Technical Training Institude</h3>
+                </div>
+            </div>
+          
           <p className="card-text text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
             Why do we use it?

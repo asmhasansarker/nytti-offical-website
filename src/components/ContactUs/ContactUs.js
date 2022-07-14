@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import customerSupport from '../assets/customerSupport.png'
 
 const ContactUs = () => {
+  useEffect(() => {
+    document.title="Contact Us"
+  })
   return (
     <div className='container'>
       <div className="card mb-3" >
@@ -13,6 +16,7 @@ const ContactUs = () => {
             <div className="card-body mt-3">
               <h4 className="card-title">Call Us for any information</h4>
               <h5>(+880) 1575124637</h5>
+              <h5>(08 AM - 05 PM)</h5>
               <h4 className="card-title">Email Us for any information</h4>
               <h5>nytti.bd@gmail.com</h5>
             </div>
