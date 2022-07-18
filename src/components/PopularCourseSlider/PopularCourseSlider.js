@@ -11,7 +11,7 @@ import CourseCard from "./courseCard";
 export default class PopularCourseSlider extends Component {
   render() {
     return (
-      <div class="row ">
+      <div className="row ">
         <CourseCard
           image={webDesignAndDevelopment}
           title="Web Design And Development"

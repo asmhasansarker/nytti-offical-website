@@ -2,15 +2,15 @@ import React from "react";
 
 const CourseCard = ({image,title,description}) => {
   return (
-    <div class="col-sm-6 col-md-4">
-      <div class="card my-3">
-        <img src={image} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{title}</h5>
-          <p class="card-text">
+    <div className="col-sm-6 col-md-4">
+      <div className="card my-3">
+        <img src={image} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">
             {description}
           </p>
-          <a href="/" class="btn btn-primary">
+          <a href="/" className="btn btn-primary">
             Course Details
           </a>
         </div>

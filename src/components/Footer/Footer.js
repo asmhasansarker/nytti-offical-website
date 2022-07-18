@@ -24,27 +24,27 @@ const Footer = () => {
   const newsLetter = [];
   const contactDetails = [];
   const contactCard = [
-    {
+    { id:1,
       icon: faMapMarkerAlt,
       title: "Adamjee Tower (2nd Floor)",
       describe: "Siddhirganj, Narayanganj",
     },
-    {
+    { id:2,
       icon: faMobileAlt,
       title: "+88 019 880 004 44",
       describe: "Sat till Thu: 8:00 till 5:00",
     },
-    {
+    { id:3,
       icon: faEnvelope,
       title: "nytti.bd@gmail.com",
       describe: "We reply within 1 work day",
     },
   ];
   const quickNavigation = [
-    { name: "Home", link: "/" },
-    { name: "About Us", link: "/about-us" },
-    { name: "courses", link: "/courses" },
-    { name: "Contact Us", link: "/contact-us" },
+    { id:1, name: "Home", link: "/" },
+    { id:2, name: "About Us", link: "/about-us" },
+    { id:3, name: "courses", link: "/courses" },
+    { id:4, name: "Contact Us", link: "/contact-us" },
   ];
   return (
     <footer className="footer-area clear-both">
@@ -60,21 +60,21 @@ const Footer = () => {
             <div className="h6 mb-3">Follow Us on social</div>
             <div className="d-flex justify-content-between">
               <div>
-                <a href="www.facebook.com"><FontAwesomeIcon icon={faFacebook} size="2x" color="#4267B2s" className=""/></a>
+                <a href="https://www.facebook.com" target="_black"><FontAwesomeIcon icon={faFacebook} size="2x" color="#4267B2s" className=""/></a>
               </div>
-              <div>
-                <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2" />
+              <div> <a href="https://www.twitter.com" target="_black">
+                <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2" /></a>
               </div>
-              <div>
+              <div> <a href="https://www.instagram.com" target="_black">
                 <FontAwesomeIcon
                   icon={faInstagram}
                   size="2x"
-                  color="#833AB4
-"
-                />
+                  color="#833AB4"
+                /></a>
               </div>
               <div>
-                <FontAwesomeIcon icon={faYoutube} size="2x" color="red" />
+              <a href="https://www.youtube.com" target="_black">
+                <FontAwesomeIcon icon={faYoutube} size="2x" color="red" /> </a>
               </div>
             </div>
           </FooterCol>
@@ -95,18 +95,18 @@ const Footer = () => {
             </div>
           </FooterCol>
           <FooterCol key={4} menuTitle="Newsletter" menuItems={newsLetter}>
-            {/* <div class="input-group mb-3 ">
+            <div className="input-group mb-3 ">
               <input
                 type="text"
-                class="form-control p-4 "
+                className="form-control "
                 placeholder="Your email..."
               />
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
+              <div className="input-group-append">
+                <button className="btn btn-primary" type="button">
                   Send
                 </button>
               </div>
-            </div> */}
+            </div>
 
             <h4 className="my-4 font-weight-bold">Working Hours</h4>
             <div className="row my-1">

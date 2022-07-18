@@ -51,48 +51,48 @@ const FreeSeminar = () => {
     //   </div>
     // </div>
 
-    <div class="container col-xxl-8 px-4 ">
+    <div className="container col-xxl-8 px-4 ">
       <div>
         <img
-          class="d-block mx-auto mb-4"
+          className="d-block mx-auto mb-4"
           src={freeSeminarLogo}
           alt=""
           width="72"
           height="57"
         />
 
-        <h1 class="display-5 fw-bold text-center">Free Seminar</h1>
+        <h1 className="display-5 fw-bold text-center">Free Seminar</h1>
       </div>
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
+      <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div className="col-10 col-sm-8 col-lg-6">
           <img
             src={freeSeminar}
-            class="d-block mx-lg-auto img-fluid"
+            className="d-block mx-lg-auto img-fluid"
             alt="Bootstrap Themes"
             width="700"
             height="500"
             loading="lazy"
           />
         </div>
-        <div class="col-lg-6">
+        <div className="col-lg-6">
           <div>
-            <h4 class="display-7 fw-bold lh-1 mb-3">
+            <h4 className="display-7 fw-bold lh-1 mb-3">
               Web Design And Development
             </h4>
             <h6 className="display-9">Date: 17 July 2022</h6>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">
                 Register Now
               </button>
             </div>
           </div>
           <div className="mt-2">
-            <h4 class="display-7 fw-bold lh-1 mb-3">
+            <h4 className="display-7 fw-bold lh-1 mb-3">
               Programming For Kids
             </h4>
             <h6 className="display-9">Date: 17 July 2022</h6>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">
                 Register Now
               </button>
             </div>

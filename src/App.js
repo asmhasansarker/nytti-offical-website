@@ -8,6 +8,8 @@ import AllCourses from "./components/AllCourses/AllCourses";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
+import LoginForm from "./components/Form/LoginForm";
+import RegistrationForm from "./components/Form/RegistrationForm";
 
 const App = () => {
   
@@ -21,6 +23,8 @@ const App = () => {
       <Routes>
         
         <Route exact path="/courses" element={<AllCourses />} />
+        <Route exact path="/login" element={<LoginForm />} />
+        <Route exact path="/signup" element={<RegistrationForm />} />
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/contact-us" element={<ContactUs />} />
         <Route exact path="/" element={<Home />}></Route>

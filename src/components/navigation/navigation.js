@@ -22,6 +22,7 @@ function Navigation() {
             <NavLink to="/courses" className="navItem nav-link">Courses</NavLink>
             <NavLink to="/about-us" className="navItem nav-link">About Us</NavLink>
             <NavLink to="/contact-us" className="navItem nav-link">Contact Us</NavLink>
+            <NavLink to="/login" className="navItem nav-link">Login</NavLink>
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

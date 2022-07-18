@@ -16,12 +16,12 @@ const BannerLeft = () => {
       </div>
       <div>
         <Link to="/courses">
-        <button type="button" class="btn btn-outline-primary me-2 btn-lg">
+        <button type="button" className="btn btn-outline-primary me-2 btn-lg">
           Browse Course
         </button>
         </Link>
         
-        <button type="button" class="btn btn-outline-success btn-lg">
+        <button type="button" className="btn btn-outline-success btn-lg">
           Join Free Seminar
         </button>
       </div>
