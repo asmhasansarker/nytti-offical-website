@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Banner";
 import BackgroundImage from "./components/custom/background/BackgroundImage";
 // import EasyContact from "./components/easyContact/easyContact";
 import FreeSeminar from "./components/freeSeminar/freeSeminar";
+import NoticeForAdmission from "./components/NoticeForAdmission/NoticeForAdmission";
 // import Navigation from "./components/navigation/navigation";
 import PopularCourses from "./components/popularCourses/PopularCourses";
 
@@ -14,6 +15,7 @@ function Home() {
   return (
     <div className="App">
       {/* <EasyContact/> */}
+      <NoticeForAdmission></NoticeForAdmission>
       <BackgroundImage>
         {/* <Navigation/> */}
         <Banner />
