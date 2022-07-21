@@ -12,7 +12,8 @@ import Footer from "./components/Footer/Footer";
 // import RegistrationForm from "./components/Form/RegistrationForm";
 import TestLoginPage from "./components/pages/TestLoginPage.jsx";
 import RegistrationPage from "./components/pages/Registration-Page";
-// import NoticeForAdmission from "./components/NoticeForAdmission/NoticeForAdmission";
+import NotFound from "./components/pages/NotFound";
+import ApplyNow from "./components/Apply/ApplyNow";
 
 export const UserContext = createContext();
 
@@ -31,9 +32,9 @@ const App = () => {
           <BackgroundImage>
             <Navigation />
           </BackgroundImage>
-          
+
           <Routes>
-            
+            <Route path="/login" element={<Navigate to="/" replace />} />
             <Route exact path="/courses" element={<AllCourses />} />
             {/* <Route
               exact
@@ -46,8 +47,10 @@ const App = () => {
             /> */}
             {/* <Route exact path="/signup" element={<RegistrationForm />} /> */}
             <Route exact path="/about-us" element={<AboutUs />} />
+            <Route exact path="/applyNow" element={<ApplyNow />} />
             <Route exact path="/contact-us" element={<ContactUs />} />
             <Route exact path="/" element={<Home />}></Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserContext.Provider>

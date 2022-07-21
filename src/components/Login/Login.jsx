@@ -22,6 +22,7 @@ const Login = () => {
             //         window.location.href="/"
             //     }
             // })
+            console.log(email,pass)
             setUser({
                 ...user,
                 isSignedIn : true,
