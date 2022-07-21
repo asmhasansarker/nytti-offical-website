@@ -62,6 +62,7 @@ const ApplyNowForm = () => {
     // formData.append("image", image);
     formData.append("studentImage",image)
     console.log(formData);
+    console.log(newStudentInfo);
 
     fetch('http://localhost:4000/students', {
       method: "POST",
