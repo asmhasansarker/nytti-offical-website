@@ -8,8 +8,6 @@ import AllCourses from "./components/AllCourses/AllCourses";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
-// import LoginForm from "./components/Form/LoginForm";
-// import RegistrationForm from "./components/Form/RegistrationForm";
 import TestLoginPage from "./components/pages/TestLoginPage.jsx";
 import RegistrationPage from "./components/pages/Registration-Page";
 import NotFound from "./components/pages/NotFound";
@@ -36,16 +34,7 @@ const App = () => {
           <Routes>
             <Route path="/login" element={<Navigate to="/" replace />} />
             <Route exact path="/courses" element={<AllCourses />} />
-            {/* <Route
-              exact
-              path="/login"
-              element={
-                <LoginForm
-                  loggedIn={user.role === "student" ? user.role : "Admin "}
-                />
-              }
-            /> */}
-            {/* <Route exact path="/signup" element={<RegistrationForm />} /> */}
+           
             <Route exact path="/about-us" element={<AboutUs />} />
             <Route exact path="/applyNow" element={<ApplyNow />} />
             <Route exact path="/contact-us" element={<ContactUs />} />
