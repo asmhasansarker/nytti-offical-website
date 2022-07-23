@@ -1,19 +1,58 @@
+import axios from "axios";
 import React, { useState } from 'react'
 import { useRef } from 'react'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+// import { getBase64} from "../../helper/FormHelper";
 
 const ApplyNowForm = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const [image, setImage] = useState(null);
+ 
+  // const [imageUrl, setImageUrl] = useState(null); 
+  const [imageUrl2, setImageUrl2] = useState(null); 
 
+  const handleImageUpload2 = async (event) => { 
+    setImageUrl2(event.target.files[0])
+    console.log(imageUrl2,"OK");
+  }
   
+
+  //  const handleImageUpload =async (event) => {
+  //   const imageData = new FormData();
+  //   imageData.set("key", "8f57b0a9bdb6595706537b44e69fd4b6");
+  //    imageData.append("image", event.target.files[0]);
+  //   axios
+  //     .post("https://api.imgbb.com/1/upload", imageData)
+  //     .then((res) => console.log(res.data.data.image.url))
+  //      .catch((err) => console.log(err));
+
+     
+  // };
+
+  // handleImageUpload()
+
+      
   
-  let nameRef, fatherNameRef, motherNameRef, presentAddressRef, permanentAddressRef, nidRef, occupationRef,
+  let nameRef,fatherNameRef, motherNameRef, presentAddressRef, permanentAddressRef, nidRef, occupationRef,
     nationalityRef, bloodGroupRef, genderRef, phoneRef, emailRef, guardiansPhoneRef, relationshipWithGuardianRef, sscSchoolRef, sscBoardRef, sscYearRef, sscGpaRef, hscSchoolRef, hscBoardRef, hscYearRef, hscGpaRef, graduationUniversityRef, graduationBoardRef, graduationYearRef, graduationGpaRef, postGraduationUniversityRef, postGraduationBoardRef, postGraduationYearRef, postGraduationGpaRef, referenceNameRef, referencePhoneRef, referenceBatchRef, referenceRollRef, relationWithReferenceRef = useRef()
-  const SubmitLogin = () => {
-
-    let formData = new FormData();
+  
+  
+   
+  
+  
+  
+  const imgFunc = async() => {
+    const imageData = new FormData();
+    imageData.set("key", "8f57b0a9bdb6595706537b44e69fd4b6");
+     imageData.append("image", imageUrl2);
+    const photo = await axios.post("https://api.imgbb.com/1/upload", imageData)
+    console.log(photo.data,"photo");
+    return photo.data.data.image.url
+  }
+  
+  
+  
+  const SubmitLogin = async() => {
 
     let name = nameRef.value;
     let fatherName = fatherNameRef.value;
@@ -54,26 +93,50 @@ const ApplyNowForm = () => {
 
     
 
+
+    // const studentInfo = {
+    //   ...newStudentInfo,
+    //   studentImage: imageUrl
+    // }
+    // console.log(imageUrl);
+
+      
+    let photo = await imgFunc();
+    // let photo ="img"
+    console.log(photo);
     let newStudentInfo = {
-      name,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
+      name,photo,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
     }
 
-    // formData.append({ ...newStudentInfo,image });
-    // formData.append("image", image);
-    formData.append("studentImage",image)
-    console.log(formData);
-    console.log(newStudentInfo);
 
-    fetch('http://localhost:4000/students', {
-      method: "POST",
-      body: formData
-    }).then(res => res.json())
-      .then(result => {
-      console.log("Success : ", result);
-      })
-      .catch(error => {
-        console.log("Error: ", error)
-    })
+    // const data = await axios.post('http://localhost:4000/api/students', {...newStudentInfo})
+
+
+
+
+
+  await axios.post('http://localhost:4000/api/students', {
+    ...newStudentInfo
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
+
+    // fetch('http://localhost:4000/api/students', {
+    //   method: "POST",
+    //   body: JSON.stringify(newStudentInfo) 
+    // }).then(res => res.json())
+    //   .then(result => {
+    //   console.log("Success : ", result);
+    //   })
+    //   .catch(error => {
+    //     console.log("Error: ", error)
+    // })
 
   }
   return (
@@ -85,7 +148,8 @@ const ApplyNowForm = () => {
           <div className='col'>
             {/* <input ref={(input) => nameRef = input} placeholder="Student Image" className="form-control animated fadeInUp" type="text" /> */}
             <h6 className='d-inline me-4'>Student Image</h6>
-            <input onChange={e => setImage(e.target.files[0])} type="file" className="form-control-file" id="exampleFormControlFile1"></input>
+            <input onChange={handleImageUpload2} type="file" className="form-control-file" id="exampleFormControlFile1"></input>
+            
 
           </div>
         </div>

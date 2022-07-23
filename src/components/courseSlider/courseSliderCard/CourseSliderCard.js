@@ -6,8 +6,12 @@ import './CourseSliderCard.css'
 
 const CourseSliderCard = () => {
   return (
-    <div className="card custom-card " style={{ "width": "13rem", "textAlign": "center"}}>
-        <div className="py-4">
+    <div
+      className="card custom-card "
+      style={{ width: "12rem"}}
+    >
+      <div className="py-4">
+        <div className="card-body">
           <div className="row justify-content-center">
             <img
               src={websiteImage}
@@ -16,17 +20,10 @@ const CourseSliderCard = () => {
               style={{ width: "5rem" }}
             />
           </div>
-
-          <div className="card-body">
-            <h5 className="card-title">
-              Card title
-            </h5>
-          </div>
         </div>
+      </div>
     </div>
-  
-  
-  )
+  );
 
 };
 

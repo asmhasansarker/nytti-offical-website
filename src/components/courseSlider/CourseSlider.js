@@ -8,13 +8,20 @@ import './CourseSlider.css'
 export default function CourseSlider() {
   var settings = {
     dots: false,
+    
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    autoPlay: true,
+    autoplaySpeed: 500,
   };
   return (
-    <Slider {...settings} className="container mt-5 custom-slider justify-content-center">
+    <Slider
+      {...settings}
+      className="container  custom-slider justify-content-center d-none"
+      style={{ width: "13rem" }}
+    >
       <div>
         <CourseSliderCard />
       </div>

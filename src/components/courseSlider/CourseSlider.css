@@ -1,5 +1,5 @@
 .custom-slider .slick-prev:before, 
 .custom-slider .slick-next:before {
-    color:rgb(38, 0, 255);
+    color:transparent;
     font-size: 40px;
 }

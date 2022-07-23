@@ -8,7 +8,12 @@ import "./navigation.css";
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      variant="light"
+      className=""
+    >
       <Container>
         <NavLink to="/" className="navbar-brand">
           <img
