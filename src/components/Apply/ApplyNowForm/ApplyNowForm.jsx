@@ -1,11 +1,14 @@
 import axios from "axios";
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useRef } from 'react'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { Link, Navigate } from "react-router-dom";
+import { ApplyedStudentContext } from "../../../App";
 // import { getBase64} from "../../helper/FormHelper";
 
 const ApplyNowForm = () => {
+  const [applyedStudent, setApplyedStudent] = useContext(ApplyedStudentContext)
   const [startDate, setStartDate] = useState(new Date());
  
   // const [imageUrl, setImageUrl] = useState(null); 
@@ -118,8 +121,10 @@ const ApplyNowForm = () => {
   await axios.post('http://localhost:4000/api/students', {
     ...newStudentInfo
   })
-  .then(function (response) {
-    console.log(response);
+    .then(function (response) {
+    setApplyedStudent(response.data)
+      console.log(response.data);
+    //  <Navigate to="/" />
   })
   .catch(function (error) {
     console.log(error);
@@ -279,10 +284,13 @@ const ApplyNowForm = () => {
           <div className='col'><input ref={(input) => relationWithReferenceRef = input} placeholder="Relation with Student" className="form-control animated fadeInUp" type="text" /></div>
         </div>
       </div>
-      
-      <div className="text-center">
+      <Link to="/studentInfo">
+       <div className="text-center">
         <button onClick={SubmitLogin} className="btn btn-success">Submit</button>
       </div>
+      </Link>
+      
+     
     </div>
   )
 }

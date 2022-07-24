@@ -19,19 +19,39 @@ export default class TeacherSlider extends Component {
         <div className=" w-25 d-block custom-teacher-slider">
           <Slider {...settings}>
             <div>
-              <img src={teacher} class="img-fluid img-thumbnail" alt="..." />
+              <img
+                src={teacher}
+                className="img-fluid img-thumbnail"
+                alt="..."
+              />
             </div>
             <div>
-              <img src={teacher} class="img-fluid img-thumbnail" alt="..." />
+              <img
+                src={teacher}
+                className="img-fluid img-thumbnail"
+                alt="..."
+              />
             </div>
             <div>
-              <img src={teacher} class="img-fluid img-thumbnail" alt="..." />
+              <img
+                src={teacher}
+                className="img-fluid img-thumbnail"
+                alt="..."
+              />
             </div>
             <div>
-              <img src={teacher} class="img-fluid img-thumbnail" alt="..." />
+              <img
+                src={teacher}
+                className="img-fluid img-thumbnail"
+                alt="..."
+              />
             </div>
             <div>
-              <img src={teacher} class="img-fluid img-thumbnail" alt="..." />
+              <img
+                src={teacher}
+                className="img-fluid img-thumbnail"
+                alt="..."
+              />
             </div>
           </Slider>
         </div>

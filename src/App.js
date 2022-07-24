@@ -12,8 +12,10 @@ import TestLoginPage from "./components/pages/TestLoginPage.jsx";
 import RegistrationPage from "./components/pages/Registration-Page";
 import NotFound from "./components/pages/NotFound";
 import ApplyNow from "./components/Apply/ApplyNow";
+import StudentInfo from "./components/Apply/ApplyNowForm/StudentInfo";
 
 export const UserContext = createContext();
+export const ApplyedStudentContext = createContext();
 
 // const getToken = false;
 const App = () => {
@@ -22,26 +24,31 @@ const App = () => {
     role: "admin",
   });
 
+  const [applyedStudent, setApplyedStudent] = useState({});
+
   if (user.isSignedIn) {
     return (
       <Fragment>
         <UserContext.Provider value={[user, setUser]}>
-          <EasyContact />
-          <BackgroundImage>
-            <Navigation />
-          </BackgroundImage>
+          <ApplyedStudentContext.Provider value={[applyedStudent, setApplyedStudent]}>
+            <EasyContact />
+            <BackgroundImage>
+              <Navigation />
+            </BackgroundImage>
 
-          <Routes>
-            <Route path="/login" element={<Navigate to="/" replace />} />
-            <Route exact path="/courses" element={<AllCourses />} />
-           
-            <Route exact path="/about-us" element={<AboutUs />} />
-            <Route exact path="/applyNow" element={<ApplyNow />} />
-            <Route exact path="/contact-us" element={<ContactUs />} />
-            <Route exact path="/" element={<Home />}></Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
+            <Routes>
+              <Route path="/login" element={<Navigate to="/" replace />} />
+              <Route exact path="/courses" element={<AllCourses />} />
+
+              <Route exact path="/about-us" element={<AboutUs />} />
+              <Route exact path="/applyNow" element={<ApplyNow />} />
+              <Route exact path="/contact-us" element={<ContactUs />} />
+              <Route exact path="/studentInfo" element={<StudentInfo />} />
+              <Route exact path="/" element={<Home />}></Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </ApplyedStudentContext.Provider>
         </UserContext.Provider>
       </Fragment>
     );
