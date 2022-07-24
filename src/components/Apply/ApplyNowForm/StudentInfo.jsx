@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PrintButton from './PrintButton'
-import PrintContent from './PrintContent'
+// import PrintContent from './PrintContent'
 
 
 

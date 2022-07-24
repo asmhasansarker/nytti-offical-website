@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { useRef } from 'react'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ApplyedStudentContext } from "../../../App";
 // import { getBase64} from "../../helper/FormHelper";
 

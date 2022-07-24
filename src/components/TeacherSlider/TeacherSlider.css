@@ -1,5 +1,63 @@
 .custom-teacher-slider{
     position: absolute;
     margin-top: -90px;
-    margin-left: 50%;
+    /* margin-left: 900px; */
+}
+.custom-teacher-slider .slick-prev:before,
+.custom-teacher-slider .slick-next:before{
+    color: transparent;
+    display: none;
+    
+}
+
+@media only screen and (min-width: 400px) {
+    .custom-teacher-slider {
+        margin-left: 300px;
+        margin-top: -350px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .custom-teacher-slider {
+        margin-left: 300px;
+        margin-top: -250px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .custom-teacher-slider {
+        margin-left: 500px;
+        margin-top: -100px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .custom-teacher-slider {
+        margin-left: 650px;
+        margin-top: -80px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .custom-teacher-slider {
+        margin-left: 650px;
+        margin-top: -80px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .custom-teacher-slider {
+        margin-left: 750px;
+        margin-top: -80px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .custom-teacher-slider {
+        margin-left: 850px;
+        margin-top: -80px;
+    }
+}
+@media only screen and (min-width: 1500px) {
+    .custom-teacher-slider {
+        margin-left: 950px;
+        margin-top: -80px;
+    }
 }
