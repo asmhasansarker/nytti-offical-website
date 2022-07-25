@@ -5,7 +5,8 @@ import formHeading from "../../assets/formHeading.png"
 import studentPhoto from '../../assets/ceoPhoto.jpg'
 
 const PrintContent = React.forwardRef((props,ref) => {
-    const [applyedStudent, setApplyedStudent] = useContext(ApplyedStudentContext)
+  const [applyedStudent, setApplyedStudent] = useContext(ApplyedStudentContext)
+  setApplyedStudent({})
     console.log(applyedStudent);
   return (
      <Fragment>

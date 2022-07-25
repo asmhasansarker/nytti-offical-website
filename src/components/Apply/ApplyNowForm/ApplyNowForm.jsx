@@ -10,6 +10,7 @@ import { ApplyedStudentContext } from "../../../App";
 const ApplyNowForm = () => {
   const [applyedStudent, setApplyedStudent] = useContext(ApplyedStudentContext)
   const [startDate, setStartDate] = useState(new Date());
+  console.log(applyedStudent);
  
   // const [imageUrl, setImageUrl] = useState(null); 
   const [imageUrl2, setImageUrl2] = useState(null); 
