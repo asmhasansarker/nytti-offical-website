@@ -15,7 +15,7 @@ import ApplyNow from "./components/Apply/ApplyNow";
 import StudentInfo from "./components/Apply/ApplyNowForm/StudentInfo";
 
 export const UserContext = createContext();
-export const ApplyedStudentContext = createContext();
+export const AppliedStudentContext = createContext();
 
 // const getToken = false;
 const App = () => {
@@ -24,13 +24,13 @@ const App = () => {
     role: "admin",
   });
 
-  const [applyedStudent, setApplyedStudent] = useState({});
+  const [appliedStudent, setAppliedStudent] = useState(null);
 
   if (user.isSignedIn) {
     return (
       <Fragment>
         <UserContext.Provider value={[user, setUser]}>
-          <ApplyedStudentContext.Provider value={[applyedStudent, setApplyedStudent]}>
+          <AppliedStudentContext.Provider value={[appliedStudent, setAppliedStudent]}>
             <EasyContact />
             <BackgroundImage>
               <Navigation />
@@ -48,7 +48,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
-          </ApplyedStudentContext.Provider>
+          </AppliedStudentContext.Provider>
         </UserContext.Provider>
       </Fragment>
     );

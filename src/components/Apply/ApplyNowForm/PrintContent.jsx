@@ -1,14 +1,18 @@
 import React, { Fragment } from 'react'
 import { useContext } from 'react'
-import { ApplyedStudentContext } from '../../../App'
+import { AppliedStudentContext } from '../../../App'
 import formHeading from "../../assets/formHeading.png"
-import studentPhoto from '../../assets/ceoPhoto.jpg'
+// import Loader from '../../Loader/Loader'
+// import studentPhoto from '../../assets/ceoPhoto.jpg'
 
 const PrintContent = React.forwardRef((props,ref) => {
-  const [applyedStudent, setApplyedStudent] = useContext(ApplyedStudentContext)
-  setApplyedStudent({})
-    console.log(applyedStudent);
-  return (
+  const [appliedStudent] = useContext(AppliedStudentContext)
+  console.log(appliedStudent);
+
+  
+    const { name, photo, fatherName, motherName, presentAddress, permanentAddress, nid, occupation,dateOfBirth, nationality, bloodGroup, gender, phone, email, guardiansPhone, relationshipWithGuardian, sscSchool, sscBoard, sscYear, sscGpa, hscSchool, hscBoard, hscYear, hscGpa, graduationUniversity, graduationBoard, graduationYear, graduationGpa, postGraduationUniversity, postGraduationBoard, postGraduationYear, postGraduationGpa, referenceName, referencePhone, referenceBatch, referenceRoll,relationWithReference } = appliedStudent
+      console.log(name);
+    return (
      <Fragment>
         <div ref={ref} className='container'>
         
@@ -21,62 +25,71 @@ const PrintContent = React.forwardRef((props,ref) => {
               <p className='text-success'>Application Successfully</p>
             </div>
         
-          <div className='row'>
-          
-            <div className="col-md-9">
-              <h5>Name : Student Name</h5>
 
-            </div>
-            <div className="col-md-3">
+        
+         <table className="table border-white">
+          <tbody >
+            <tr  >
+              <td >
+                <div>
+                  <h5>Name : {name}</h5>
+                </div>
+              </td>
+              <td>
+                <div className="float-end">
 
-              <img src={studentPhoto } alt="student Pic"  className='img-thumbnail ' style={{width:"200px",height:"200px"}}/>
-            </div>
-            
-        </div>
+                  <img src={photo } alt="student Pic" className='img-thumbnail'  style={{width:"250px",height:"200px"}}/>
+                </div>
+              </td>
+             
+            </tr>
+           
+          </tbody>
+        </table>
         
         <table className="table table-bordered mt-2">
           <tbody>
             <tr>
               <td >Father's Name</td>
-              <td>Awlad Hossain</td>
+                <td>{fatherName }</td>
               <td>Mother's Name</td>
-              <td>Saleha Begum</td>
+              <td>{motherName}</td>
             </tr>
             <tr>
               <td >Present Address</td>
-              <td>Fatullah, Narayanganj</td>
+                <td>{presentAddress }</td>
               <td>Permanent Address</td>
-              <td>Fatullah, Narayanganj</td>
+                <td>{ permanentAddress}</td>
             </tr>
            <tr>
               <td >National ID</td>
-              <td>254485676948</td>
+              <td>{nid}</td>
               <td>Occupation</td>
-              <td>Date of Birth</td>
+              <td>{occupation}</td>
             </tr>
             <tr>
               <td >Date of Birth</td>
-              <td>22/05/1999</td>
+              <td>{dateOfBirth}</td>
               <td>Nationality</td>
-              <td>Bangladeshi</td>
+              <td>{nationality}</td>
             </tr>
             <tr>
               <td >Blood Group</td>
-              <td>A+</td>
+                <td>{ bloodGroup}</td>
               <td>Gender</td>
-              <td>Male</td>
+              <td>{gender}</td>
             </tr>
             <tr>
               <td >Phone</td>
-              <td>01521203643</td>
+                <td>{ phone }</td>
               <td>Email</td>
-              <td>test@gmail.com</td>
+              <td>{email}</td>
             </tr>
             <tr>
               <td >Guardian Number</td>
-              <td>0195648744</td>
+              <td>{guardiansPhone}</td>
               <td>Relationship With Guardian</td>
-              <td>Father</td>
+                <td>{ relationshipWithGuardian}</td>
             </tr>
           </tbody>
         </table>
@@ -94,32 +107,43 @@ const PrintContent = React.forwardRef((props,ref) => {
             </tr>
             <tr>
               <td>S.S.C/O Level</td>
-              <td>PDB Secondary School</td>
-              <td>Dhaka</td>
-              <td>2014</td>
-              <td>5.00</td>
+                <td>{ sscSchool}</td>
+              <td>{sscBoard}</td>
+                <td>{ sscYear}</td>
+              <td>{sscGpa}</td>
             </tr>
             <tr>
               <td>H.S.C/ Diploma</td>
-              <td>College</td>
-              <td>Dhaka</td>
-              <td>2014</td>
-              <td>5.00</td>
-            </tr>
-             <tr>
+                <td>{ hscSchool}</td>
+              <td>{hscBoard}</td>
+                <td>{ hscYear }</td>
+                <td>{ hscGpa }</td>
+              </tr>
+              {
+                graduationUniversity !== ""  && (
+                  <tr>
               <td>Graduation</td>
-              <td>College</td>
-              <td>Dhaka</td>
-              <td>2014</td>
-              <td>5.00</td>
+                <td>{ graduationUniversity }</td>
+                <td>{graduationBoard}</td>
+                <td>{ graduationYear}</td>
+                <td>{graduationGpa}</td>
             </tr>
-             <tr>
-              <td>Post Graduation</td>
-              <td>College</td>
-              <td>Dhaka</td>
-              <td>2014</td>
-              <td>5.00</td>
-            </tr>
+                )
+              }
+
+              {
+                postGraduationUniversity !== "" && (
+                    <tr>
+                        <td>Post Graduation</td>
+                        <td>{postGraduationUniversity}</td>
+                        <td>{ postGraduationBoard }</td>
+                        <td>{ postGraduationYear }</td>
+                        <td>{ postGraduationGpa}</td>
+                    </tr>
+                )
+              }
+             
+           
            
           </tbody>
         </table>
@@ -129,32 +153,44 @@ const PrintContent = React.forwardRef((props,ref) => {
           <tbody>
             <tr>
               <td >Name</td>
-              <td>Awlad Hossain</td>
+              <td colSpan={2}>{referenceName}</td>
               <td>Mobile Number</td>
-              <td>01705464678</td>
+              <td colSpan={2}>{referencePhone}</td>
             </tr>
 
             <tr>
               <td >Batch</td>
-              <td>2</td>
+              <td>{referenceBatch}</td>
               <td>Roll/ ID No</td>
-              <td>25474</td>
+              <td>{referenceRoll}</td>
+              <td>Relation with reference</td>
+              <td>{ relationWithReference }</td>
             </tr>
            
           </tbody>
         </table>
 
-        <div className="row justify-content-between " style={{marginTop:"150px",position:"relative"}}>
-          <div className='col-md-3  '>
-            <div className="bordered " style={{width:"150px",height:"1px",border:"0.5px solid black"}}></div>
-            <h6>Student Signature</h6>
-          </div>
-          <div className="col-md-6 text-light" >middle</div>
-          <div className='col-md-3 style={{position:"absolute",top:"5px",right:"150px"}}'>
-            <div className="bordered " style={{width:"180px",height:"1px",border:"0.5px solid black"}}></div>
-            <h6 >Authorized Signature</h6>
-          </div>
-        </div>
+        <table className="table border-white" style={{marginTop:"70px"}}>
+          <tbody>
+            <tr>
+              <td >
+                <div className='float-start '>
+                <h6  style={{borderTop:"1px solid black", width:"200px"}}>Student Signature</h6>
+                </div>
+              </td>
+              
+              <td >
+                <div className='float-end '>
+                  <h6 className='text-end' style={{borderTop:"1px solid black", width:"200px"}}>Authorized Signature</h6>
+                </div>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+
+
+       
 
         <div className='bg-info py-1'>
           <h5>www.nytti.com.bd</h5>
@@ -163,6 +199,8 @@ const PrintContent = React.forwardRef((props,ref) => {
         </div>
     </Fragment>
   )
-})
+  }
+  
+)
 
 export default PrintContent

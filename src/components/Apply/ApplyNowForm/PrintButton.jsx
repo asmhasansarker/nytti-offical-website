@@ -10,7 +10,7 @@ const PrintButton = () => {
     <div className='container'>
       <ReactToPrint
               trigger={() => <div className='text-center my-3'>
-                  <button className='btn btn-danger '><i class="fa-solid fa-print"></i> Print</button>
+                  <button className='btn btn-danger '><i className="fa-solid fa-print"></i> Print</button>
         </div>}
         content={() => componentRef.current}
       />

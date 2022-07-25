@@ -4,13 +4,13 @@ import { useRef } from 'react'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
-import { ApplyedStudentContext } from "../../../App";
+import { AppliedStudentContext } from "../../../App";
 // import { getBase64} from "../../helper/FormHelper";
 
 const ApplyNowForm = () => {
-  const [applyedStudent, setApplyedStudent] = useContext(ApplyedStudentContext)
+  const [appliedStudent, setAppliedStudent] = useContext(AppliedStudentContext)
   const [startDate, setStartDate] = useState(new Date());
-  console.log(applyedStudent);
+  console.log(appliedStudent);
  
   // const [imageUrl, setImageUrl] = useState(null); 
   const [imageUrl2, setImageUrl2] = useState(null); 
@@ -47,7 +47,7 @@ const ApplyNowForm = () => {
   
   const imgFunc = async() => {
     const imageData = new FormData();
-    imageData.set("key", "8f57b0a9bdb6595706537b44e69fd4b6");
+    imageData.set("key", "8fdc32a748229e66ad1c10024ca05678");
      imageData.append("image", imageUrl2);
     const photo = await axios.post("https://api.imgbb.com/1/upload", imageData)
     console.log(photo.data,"photo");
@@ -123,7 +123,7 @@ const ApplyNowForm = () => {
     ...newStudentInfo
   })
     .then(function (response) {
-    setApplyedStudent(response.data)
+    setAppliedStudent(response.data)
       console.log(response.data);
     //  <Navigate to="/" />
   })
