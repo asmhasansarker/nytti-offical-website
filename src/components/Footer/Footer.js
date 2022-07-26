@@ -31,7 +31,7 @@ const Footer = () => {
     },
     { id:2,
       icon: faMobileAlt,
-      title: "+88 019 880 004 44",
+      title: "+88 019 387 133 58",
       describe: "Sat till Thu: 8:00 till 5:00",
     },
     { id:3,
@@ -52,29 +52,46 @@ const Footer = () => {
         <div className="row py-5">
           <FooterCol key={1} menuTitle={"About Us"} menuItems={aboutUs}>
             <p>
-              সরকার স্বীকৃত কারিগরি ও টেকনোলজি ভিত্তিক সংস্থা Gov. Reg. No-
-              S-176/06 রেজিষ্টার্ড অফিস: কলেজপাড়া (ডায়াবেটিক হাসপাতালের পেছনে)
-              গোবিন্দনগর, ঠাকুরগাঁও গাজীপুর অফিস: ব্যাপারী রোড, আউসপাড়া, টঙ্গী,
-              গাজীপুর-1711, বাংলাদেশ
+              সিদ্ধিরগঞ্জ থানাধীন সর্বোচ্চমানের ও সর্ববৃহত একমাত্র প্রতিষ্ঠান
+            </p>
+            <p>
+              কদমতলী, এম ডব্লিউ উচ্চ বিদ্যালয়ের ১৫০ গজ উত্তরে জিনিয়াস স্কুল এন্ড কলেজ সংলগ্ন ( ১০ তলা ভবন) আদমজী নগর, সিদ্ধিরগঞ্জ, নারায়নগঞ্জ
             </p>
             <div className="h6 mb-3">Follow Us on social</div>
             <div className="d-flex justify-content-between">
               <div>
-                <a href="https://www.facebook.com" target="_black"><FontAwesomeIcon icon={faFacebook} size="2x" color="#4267B2s" className=""/></a>
-              </div>
-              <div> <a href="https://www.twitter.com" target="_black">
-                <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2" /></a>
-              </div>
-              <div> <a href="https://www.instagram.com" target="_black">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  size="2x"
-                  color="#833AB4"
-                /></a>
+                <a
+                  href="https://www.facebook.com/geniusgroupnyttibd"
+                  target="_black"
+                >
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    size="2x"
+                    color="#4267B2s"
+                    className=""
+                  />
+                </a>
               </div>
               <div>
-              <a href="https://www.youtube.com" target="_black">
-                <FontAwesomeIcon icon={faYoutube} size="2x" color="red" /> </a>
+                {" "}
+                <a href="https://www.twitter.com" target="_black">
+                  <FontAwesomeIcon icon={faTwitter} size="2x" color="#1DA1F2" />
+                </a>
+              </div>
+              <div>
+                {" "}
+                <a href="https://www.instagram.com" target="_black">
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    size="2x"
+                    color="#833AB4"
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.youtube.com" target="_black">
+                  <FontAwesomeIcon icon={faYoutube} size="2x" color="red" />{" "}
+                </a>
               </div>
             </div>
           </FooterCol>
@@ -126,7 +143,12 @@ const Footer = () => {
           </FooterCol>
         </div>
         <div className="copyRight text-center ">
-          <p>Copyright <FontAwesomeIcon icon={faCopyright} size="1x" /> {new Date().getFullYear()}  All Rights Reserved By NYTTI</p>
+          <p>
+            Copyright <FontAwesomeIcon icon={faCopyright} size="1x" />{" "}
+            {new Date().getFullYear()} All Rights Reserved By NYTTI
+            
+          </p>
+
         </div>
       </div>
     </footer>

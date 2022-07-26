@@ -1,13 +1,19 @@
 import axios from "axios";
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRef } from 'react'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 import { AppliedStudentContext } from "../../../App";
+import { RootApi } from "../../API_Request/ApiRequest";
 // import { getBase64} from "../../helper/FormHelper";
 
 const ApplyNowForm = () => {
+
+  useEffect(() => {
+    document.title="Apply Now"
+  })
+
   const [appliedStudent, setAppliedStudent] = useContext(AppliedStudentContext)
   const [startDate, setStartDate] = useState(new Date());
   console.log(appliedStudent);
@@ -119,7 +125,7 @@ const ApplyNowForm = () => {
 
 
 
-  await axios.post('http://localhost:4000/api/students', {
+  await axios.post(`${RootApi}api/students`, {
     ...newStudentInfo
   })
     .then(function (response) {

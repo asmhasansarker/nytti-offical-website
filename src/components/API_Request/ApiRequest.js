@@ -1,0 +1,1 @@
+export const RootApi = "https://guarded-anchorage-24407.herokuapp.com/";
