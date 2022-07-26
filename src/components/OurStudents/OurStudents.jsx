@@ -13,9 +13,9 @@ const OurStudents = () => {
         axios.get(`${RootApi}api/students`)
             .then(res => setAllStudents(res.data))
             .catch(err => console.log(err))
-    }, [])
+    },)
     
-    console.log(allStudents);
+    // console.log(allStudents);
   return (
     <div className='container'>
       <table className="table table-bordered">

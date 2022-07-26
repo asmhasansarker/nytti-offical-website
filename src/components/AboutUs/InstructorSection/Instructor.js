@@ -13,7 +13,7 @@ const Instructor = () => {
       .get(`${RootApi}api/teachers`)
       .then((res) => setAllTeachers(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  },);
 
   return (
     <>
