@@ -11,12 +11,20 @@ const EasyContact = () => {
         <div className="row">
           <div className="col">
             <div className="row">
-              <div className="col-5 text-white"><FontAwesomeIcon icon={faPhone} className="me-2"/> +8801938713358</div>
-              <div className="col-7 text-white"><FontAwesomeIcon icon={faEnvelope} className="mx-2"/>nytti.bd@gmail.com</div>
+              <div className="col-5 text-white">
+                <FontAwesomeIcon icon={faPhone} className="me-2" />{" "}
+                +8801938713358
+              </div>
+              <div className="col-7 text-white">
+                <FontAwesomeIcon icon={faEnvelope} className="mx-2" />
+                nytti.bd@gmail.com
+              </div>
             </div>
           </div>
-          
-          <div className="col"></div>
+
+          <div className="col  ">
+            
+          </div>
         </div>
       </div>
     </div>

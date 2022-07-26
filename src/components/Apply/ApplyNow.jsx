@@ -5,7 +5,7 @@ import ApplyNowHeading from './ApplyNowHeading/ApplyNowHeading'
 const ApplyNow = () => {
     return (
       <Fragment>
-            <ApplyNowHeading/>
+          <ApplyNowHeading/>
           <ApplyNowForm/>
       </Fragment>
   )

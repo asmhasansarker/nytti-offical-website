@@ -25,21 +25,7 @@ const ApplyNowForm = () => {
     setImageUrl2(event.target.files[0])
     console.log(imageUrl2,"OK");
   }
-  
 
-  //  const handleImageUpload =async (event) => {
-  //   const imageData = new FormData();
-  //   imageData.set("key", "8f57b0a9bdb6595706537b44e69fd4b6");
-  //    imageData.append("image", event.target.files[0]);
-  //   axios
-  //     .post("https://api.imgbb.com/1/upload", imageData)
-  //     .then((res) => console.log(res.data.data.image.url))
-  //      .catch((err) => console.log(err));
-
-     
-  // };
-
-  // handleImageUpload()
 
       
   

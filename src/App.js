@@ -1,4 +1,4 @@
-import React, { createContext, Fragment, useState } from "react";
+import React, { createContext, Fragment, useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Home";
 import EasyContact from "./components/easyContact/easyContact";
@@ -8,8 +8,8 @@ import AllCourses from "./components/AllCourses/AllCourses";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
-import TestLoginPage from "./components/pages/TestLoginPage.jsx";
-import RegistrationPage from "./components/pages/Registration-Page";
+// import TestLoginPage from "./components/pages/TestLoginPage.jsx";
+// import RegistrationPage from "./components/pages/Registration-Page";
 import NotFound from "./components/pages/NotFound";
 import ApplyNow from "./components/Apply/ApplyNow";
 import StudentInfo from "./components/Apply/ApplyNowForm/StudentInfo";
@@ -24,14 +24,25 @@ export const AllTeachers = createContext();
 
 // const getToken = false;
 const App = () => {
+
+
   const [user, setUser] = useState({
-    isSignedIn: true,
-    role: "admin",
+    isSignedIn: false,
+    role: "user",
   });
+
+
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      setUser(user);
+    }
+  }, [user]);
 
   const [appliedStudent, setAppliedStudent] = useState(null);
   const [allStudents, setAllStudents] = useState([]);
-  const [allTeachers, setAllTeachers] = useState([])
+  const [allTeachers, setAllTeachers] = useState([]);
 
   if (user.isSignedIn) {
     return (
@@ -54,14 +65,14 @@ const App = () => {
                   <Route exact path="addTeacher" element={<AddTeacher />} />
                   <Route exact path="/about-us" element={<AboutUs />} />
                   <Route exact path="/applyNow" element={<ApplyNow />} />
-                  <Route exact path="/contact-us" element={<ContactUs />} />
+                  {/* <Route exact path="/contact-us" element={<ContactUs />} /> */}
                   <Route exact path="/studentInfo" element={<StudentInfo />} />
                   <Route
                     exact
                     path="/ourAllStudents"
                     element={<OurStudents />}
                   />
-                  <Route exact path="/" element={<Home />}></Route>
+                  <Route exact path="/" element={<Home />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
@@ -71,21 +82,32 @@ const App = () => {
         </UserContext.Provider>
       </Fragment>
     );
-  } else {
+  } else if (!user.isSignedIn && user.role === "user") {
     return (
       <Fragment>
         <UserContext.Provider value={[user, setUser]}>
-          <EasyContact />
-          <BackgroundImage>
-            <Navigation />
-          </BackgroundImage>
+          <AllTeachers.Provider value={[allTeachers, setAllTeachers]}>
+            <AppliedStudentContext.Provider
+              value={[appliedStudent, setAppliedStudent]}
+            >
+              <EasyContact />
+              <BackgroundImage>
+                <Navigation />
+              </BackgroundImage>
 
-          <Routes>
-            <Route path="/" element={<Navigate to="/Login" replace />} />
-            <Route exact path="/Login" element={<TestLoginPage />} />
-            <Route exact path="/Registration" element={<RegistrationPage />} />
-          </Routes>
-          <Footer />
+              <Routes>
+                {/* <Route path="/" element={<Navigate to="/Login" replace />} /> */}
+                <Route exact path="/about-us" element={<AboutUs />} />
+                <Route exact path="/applyNow" element={<ApplyNow />} />
+                <Route exact path="/courses" element={<AllCourses />} />
+                <Route exact path="/contact-us" element={<ContactUs />} />
+                <Route exact path="/" element={<Home />} />
+                {/* <Route exact path="/Login" element={<TestLoginPage />} />
+            <Route exact path="/Registration" element={<RegistrationPage />} /> */}
+              </Routes>
+              <Footer />
+            </AppliedStudentContext.Provider>
+          </AllTeachers.Provider>
         </UserContext.Provider>
       </Fragment>
     );
