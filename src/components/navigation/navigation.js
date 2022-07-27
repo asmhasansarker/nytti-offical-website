@@ -11,7 +11,7 @@ import Button from "react-bootstrap/Button";
 // import Form from 'react-bootstrap/Form';
 import Modal from "react-bootstrap/Modal";
 import { adminEmail, adminPassword } from "../adminInfo/adminInfo";
-import { ErrorToast,SuccessToast } from "../helper/FormHelper";
+import { ErrorToast, SuccessToast } from "../helper/FormHelper";
 
 function Navigation() {
   let passRef,
@@ -21,35 +21,34 @@ function Navigation() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [user] = useContext(UserContext);
+  const [user, setUser] = useContext(UserContext);
 
   const SubmitLogin = () => {
     let email = emailRef.value;
     let pass = passRef.value;
-    if ((email !== adminEmail) || (pass !== adminPassword)) {
+    if (email !== adminEmail || pass !== adminPassword) {
       ErrorToast("Invalid User");
     } else {
-      localStorage.setItem("user", JSON.stringify({isSignedIn:true,role:'admin'}));
-      // setUser({ ...user, isSignedIn: true, role: "admin" });
-      SuccessToast("Logged In Successfully.")
+      // localStorage.setItem("user", JSON.stringify({isSignedIn:true,role:'admin'}));
+      setUser({ ...user, isSignedIn: true, role: "admin" });
+      SuccessToast("Logged In Successfully.");
       handleClose();
     }
   };
 
   const handleLogOut = () => {
-
-    localStorage.removeItem("user");
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ isSignedIn: false, role: "user" })
-    );
-    // setUser({
-    //   ...user,
-    //   isSignedIn: false,
-    //   role:"user"
-    // })
-
-  }
+    // localStorage.removeItem("user");
+    // localStorage.setItem(
+    //   "user",
+    //   JSON.stringify({ isSignedIn: false, role: "user" })
+    // );
+    setUser({
+      ...user,
+      isSignedIn: false,
+      role: "user",
+    });
+    SuccessToast("Logged Out Successfully");
+  };
   return (
     <Fragment>
       <Navbar collapseOnSelect expand="lg" variant="light" className="">
@@ -78,6 +77,9 @@ function Navigation() {
                 <NavLink to="/addTeacher" className="navItem nav-link">
                   Add Teacher
                 </NavLink>
+                <NavLink to="/addCourse" className="navItem nav-link">
+                  Add Course
+                </NavLink>
                 <NavLink to="/ourAllStudents" className="navItem nav-link">
                   Our Students
                 </NavLink>
@@ -88,7 +90,7 @@ function Navigation() {
                   Admin
                 </NavLink> */}
 
-                <NavLink to="/" >
+                <NavLink to="/">
                   <div className=" ms-4">
                     <button onClick={handleLogOut} className="btn btn-primary">
                       Log out

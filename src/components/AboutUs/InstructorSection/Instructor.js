@@ -2,8 +2,10 @@ import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import { AllTeachers } from "../../../App";
 import { RootApi } from "../../API_Request/ApiRequest";
-import ceoPhoto from "../../assets/ceoPhoto.jpg";
+import ceo from "../../assets/CEO.JPG";
+import manager from "../../assets/ceoPhoto.jpg";
 import InstructorCard from "./InstructorCard";
+// import {TeacherAddedToast} from "../../helper/FormHelper"
 
 const Instructor = () => {
   const [allTeachers, setAllTeachers] = useContext(AllTeachers);
@@ -13,7 +15,15 @@ const Instructor = () => {
       .get(`${RootApi}api/teachers`)
       .then((res) => setAllTeachers(res.data))
       .catch((err) => console.log(err));
-  },);
+  });
+  
+  const handleDelete = (id) => {
+    console.log(id)
+    axios
+      .delete(`${RootApi}api/teachers/${id}`)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  }
 
   return (
     <>
@@ -24,16 +34,17 @@ const Instructor = () => {
       </div>
       <div className="card mb-3">
         <div className="row g-0">
-          <div className="col-md-4">
+          <div className="col-md-2">
             <img
-              src={ceoPhoto}
+              src={ceo}
               className="img-fluid rounded-start"
               alt="ceoPhoto"
+              // style={{ width: "200px", height: "250px" }}
             />
           </div>
-          <div className="col-md-8">
+          <div className="col-md-10">
             <div className="card-body">
-              <h5 className="card-title">CEO Name</h5>
+              <h5 className="card-title">Engineer Mr. Jahidul Islam</h5>
               <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -82,7 +93,7 @@ const Instructor = () => {
           </div>
           <div className="col-md-4">
             <img
-              src={ceoPhoto}
+              src={manager}
               className="img-fluid rounded-start"
               alt="ceoPhoto"
             />
@@ -95,22 +106,28 @@ const Instructor = () => {
         </div>
       </div>
       <div className="row">
-        {allTeachers.map((teacher, key) => (
+        {allTeachers.length > 0 ? (
+          allTeachers.map((teacher, key) => (
             <InstructorCard
-                key={teacher._id}
-            image={teacher.photo}
-            title={teacher.name}
-            subject={teacher.instructorOf}
-            phone={teacher.phone}
-            email={teacher.email}
-          />
-        ))}
+              key={teacher._id}
+              id={teacher._id}
+              image={teacher.photo}
+              title={teacher.name}
+              subject={teacher.instructorOf}
+              phone={teacher.phone}
+              email={teacher.email}
+              handleDelete={handleDelete}
+            />
+          ))
+        ) : (
+          <div className="d-flex justify-content-center my-4">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
 
-        {/* <InstructorCard image={ceoPhoto} title="Instructor Name" description="a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content" />
-                <InstructorCard image={ceoPhoto} title="Instructor Name" description="a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content" />
-                <InstructorCard image={ceoPhoto} title="Instructor Name" description="a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content" />
-                <InstructorCard image={ceoPhoto} title="Instructor Name" description="a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content" />
-                <InstructorCard image={ceoPhoto} title="Instructor Name" description="a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content" /> */}
+        
       </div>
     </>
   );

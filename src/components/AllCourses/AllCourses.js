@@ -1,18 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import CourseCard from '../PopularCourseSlider/courseCard'
-import webDesignAndDevelopment from "../assets/webDesignAndDevelopment.jpg";
-import digitalMarketing from "../assets/digitalMarketing.jpg";
-import msOffice from "../assets/msOfficeMale.jpg";
-import kidsProgramming from "../assets/kidsProgramming.jpg";
-import graphicDesign from "../assets/graphicDesign.jpg";
-import hscICT from "../assets/hscICT.jpg";
+// import webDesignAndDevelopment from "../assets/webDesignAndDevelopment.jpg";
+// import digitalMarketing from "../assets/digitalMarketing.jpg";
+// import msOffice from "../assets/msOfficeMale.jpg";
+// import kidsProgramming from "../assets/kidsProgramming.jpg";
+// import graphicDesign from "../assets/graphicDesign.jpg";
+// import hscICT from "../assets/hscICT.jpg";
+import axios from 'axios';
+import { RootApi } from '../API_Request/ApiRequest';
+import { AllCourses } from '../../App';
 // import allCoursesBanner from '../assets/allCoursesBanner.jpg'
 
 
-const AllCourses = () => {
+const AllCoursesPage = () => {
+
+  const [allCourses, setAllCourses] = useContext(AllCourses);
+
   useEffect(() => {
-    document.title="All Courses"
+    document.title = "All Courses"
+    axios
+      .get(`${RootApi}api/courses`)
+      .then((res) => setAllCourses(res.data))
+      .catch((err) => console.log(err));
   })
+
+
+  const handleDeleteCourse = (id) => {
+    console.log(id)
+    axios
+      .delete(`${RootApi}api/courses/${id}`)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+ }
+
+
+
   return (
     <>
       <div className='container'>
@@ -21,16 +43,26 @@ const AllCourses = () => {
                     <h3>OUR ALL COURSES</h3>
                 </div>
             </div>
-        {/* <div class="card bg-dark text-white " >
-          <img src={allCoursesBanner} class="card-img" alt="courseBannerPhoto" />
-          <div class="card-img-overlay">
-            <h1 class="card-title text-dark h2 text-center">All Courses are available</h1>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div> */}
+        
         <div className='row'>
-          <CourseCard
+
+          {
+            allCourses.map((course, key) => {
+              return (
+                <CourseCard key={course._id}
+                  id={course._id}
+                  image={course.photo}
+                  title={course.courseName}
+                  duration={course.courseDuration}
+                  fee={course.courseFee}
+                  totalClass={course.totalClass}
+                  deleteCourse={handleDeleteCourse}
+                  
+                />
+              );
+            })
+          }
+          {/* <CourseCard
             image={webDesignAndDevelopment}
             title="Web Design And Development"
             description="With supporting text below as a natural lead-in to additional
@@ -67,7 +99,7 @@ const AllCourses = () => {
             title="HSC ICT"
             description="With supporting text below as a natural lead-in to additional
                 content."
-          />
+          /> */}
         </div>
 
       </div>
@@ -76,4 +108,4 @@ const AllCourses = () => {
   )
 }
 
-export default AllCourses
+export default AllCoursesPage

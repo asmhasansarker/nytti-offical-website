@@ -88,26 +88,13 @@ const ApplyNowForm = () => {
     let relationWithReference = relationWithReferenceRef.value;
 
     
-
-
-    // const studentInfo = {
-    //   ...newStudentInfo,
-    //   studentImage: imageUrl
-    // }
-    // console.log(imageUrl);
-
       
     let photo = await imgFunc();
-    // let photo ="img"
+    
     console.log(photo);
     let newStudentInfo = {
       name,photo,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
     }
-
-
-    // const data = await axios.post('http://localhost:4000/api/students', {...newStudentInfo})
-
-
 
 
 
@@ -117,24 +104,12 @@ const ApplyNowForm = () => {
     .then(function (response) {
     setAppliedStudent(response.data)
       console.log(response.data);
-    //  <Navigate to="/" />
+   
   })
   .catch(function (error) {
     console.log(error);
   });
 
-
-
-    // fetch('http://localhost:4000/api/students', {
-    //   method: "POST",
-    //   body: JSON.stringify(newStudentInfo) 
-    // }).then(res => res.json())
-    //   .then(result => {
-    //   console.log("Success : ", result);
-    //   })
-    //   .catch(error => {
-    //     console.log("Error: ", error)
-    // })
 
   }
   return (

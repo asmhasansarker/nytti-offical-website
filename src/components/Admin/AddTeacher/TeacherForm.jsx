@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 // import { AllTeachers } from "../../../App";
 
 import { RootApi } from "../../API_Request/ApiRequest";
+import { TeacherAddedToast } from "../../helper/FormHelper";
 // import { getBase64} from "../../helper/FormHelper";
 
 const TeacherForm = () => {
@@ -62,10 +63,11 @@ const TeacherForm = () => {
     ...newTeacherInfo
   })
     .then(function (response) {
-    // setAppliedStudent(response.data)
+  
       console.log(response.data);
 
-  })
+    })
+    .then(TeacherAddedToast("Teacher Added Successfully."))
   .catch(function (error) {
     console.log(error);
   });
@@ -103,7 +105,7 @@ const TeacherForm = () => {
       </div>
 
 
-      <Link to="/about-us">
+      <Link to="/addTeacher">
        <div className="text-center">
         <button onClick={SubmitLogin} className="btn btn-success">Submit</button>
       </div>

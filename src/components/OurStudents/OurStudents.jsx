@@ -13,9 +13,15 @@ const OurStudents = () => {
         axios.get(`${RootApi}api/students`)
             .then(res => setAllStudents(res.data))
             .catch(err => console.log(err))
-    },)
+    })
     
-    // console.log(allStudents);
+  const handleStudentDelete = (id) => {
+    console.log(id);
+    axios
+      .delete(`${RootApi}api/students/${id}`)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+    }
   return (
     <div className='container'>
       <table className="table table-bordered">
@@ -39,7 +45,7 @@ const OurStudents = () => {
                                   <td>{ student.phone}</td>
                                   <td>
                                       <button className="btn btn-outline-success me-2">Edit</button>
-                                      <button className="btn btn-outline-danger">Delete</button>
+                                      <button className="btn btn-outline-danger" onClick={() => handleStudentDelete(student._id)}>Delete</button>
                                   </td>
                                     </tr>
                           )
