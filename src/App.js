@@ -69,7 +69,6 @@ const App = () => {
                     <Route exact path="/addCourse" element={<AddCourse />} />
                     <Route exact path="/about-us" element={<AboutUs />} />
                     <Route exact path="/applyNow" element={<ApplyNow />} />
-                    {/* <Route exact path="/contact-us" element={<ContactUs />} /> */}
                     <Route
                       exact
                       path="/studentInfo"
@@ -111,6 +110,7 @@ const App = () => {
                   <Route exact path="/applyNow" element={<ApplyNow />} />
                   <Route exact path="/courses" element={<AllCoursesPage />} />
                   <Route exact path="/contact-us" element={<ContactUs />} />
+                  <Route exact path="/studentInfo" element={<StudentInfo />} />
                   <Route exact path="/" element={<Home />} />
                   {/* <Route exact path="/Login" element={<TestLoginPage />} />
             <Route exact path="/Registration" element={<RegistrationPage />} /> */}
