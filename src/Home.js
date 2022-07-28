@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import {  useEffect } from "react";
+// import { UserContext } from "./App";
 import Banner from "./components/Banner/Banner";
 import CourseSlider from "./components/courseSlider/CourseSlider";
 import BackgroundImage from "./components/custom/background/BackgroundImage";
@@ -10,8 +11,14 @@ import PopularCourses from "./components/popularCourses/PopularCourses";
 import TeacherSlider from "./components/TeacherSlider/TeacherSlider";
 
 function Home() {
+  // const [ setUser] = useContext(UserContext)
   useEffect(() => {
     document.title = "NYTTI - National Youth and Technical Training Institude";
+    // localStorage.setItem("user", "true")
+    // const user = JSON.parse(localStorage.getItem("user"));
+    // if (user) {
+    //   setUser(user)
+    // }
   });
   return (
     <div className="App">

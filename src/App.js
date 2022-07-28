@@ -26,17 +26,17 @@ export const AllCourses = createContext();
 
 // const getToken = false;
 const App = () => {
-  const [user, setUser] = useState({
+  let [user, setUser] = useState({
     isSignedIn: false,
     role: "user",
   });
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("user"));
-  //   if (user) {
-  //     setUser(user);
-  //   }
-  // }, [user]);
+
+//  user = JSON.parse(localStorage.getItem("user"));
+//   if (user) {
+//     setUser(user);
+//   }
+
 
   const [appliedStudent, setAppliedStudent] = useState(null);
   const [allStudents, setAllStudents] = useState([]);

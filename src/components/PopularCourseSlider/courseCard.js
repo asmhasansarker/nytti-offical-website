@@ -20,9 +20,9 @@ const CourseCard = ({
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
 
-          <h6>Course duration : {duration}</h6>
-          <h6>Course fee : {fee} TK</h6>
-          <h6>Total class : {totalClass}</h6>
+          <h6>Course duration : {duration ? duration : "3 Month"}</h6>
+          <h6>Course fee : {fee ? fee : "3000 "} TK</h6>
+          <h6>Total class : {totalClass ? totalClass : "40"}</h6>
           <div className="text-center">
             {user.role === "admin" ? (
               <button

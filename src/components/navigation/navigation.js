@@ -29,7 +29,11 @@ function Navigation() {
     if (email !== adminEmail || pass !== adminPassword) {
       ErrorToast("Invalid User");
     } else {
-      // localStorage.setItem("user", JSON.stringify({isSignedIn:true,role:'admin'}));
+      // localStorage.setItem(
+      //   "user",
+      //   JSON.stringify({ isSignedIn: true, role: "admin" })
+      // );
+      
       setUser({ ...user, isSignedIn: true, role: "admin" });
       SuccessToast("Logged In Successfully.");
       handleClose();
@@ -42,6 +46,8 @@ function Navigation() {
     //   "user",
     //   JSON.stringify({ isSignedIn: false, role: "user" })
     // );
+
+    
     setUser({
       ...user,
       isSignedIn: false,
