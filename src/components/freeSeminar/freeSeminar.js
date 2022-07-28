@@ -4,53 +4,6 @@ import freeSeminarLogo from "../assets/freeSeminaLogo.png";
 
 const FreeSeminar = () => {
   return (
-    // <div className="container ">
-    //   <div className="row text-center">
-    //     <h1 className="mb-5">Free Seminar</h1>
-    //   </div>
-    //   <div className="row">
-    //     <div className="col">
-    //       <h2>অংশ নিন ফ্রি সেমিনারে</h2>
-    //       <p>
-    //         ফ্রিল্যান্সিং-এর জন্য কোন কোর্স করবেন, সিদ্ধান্ত নিতে পারছেন না?
-    //         জয়েন করুন আমাদের ফ্রি সেমিনারে। বিষয়ভিত্তিক এই সেমিনারগুলোতে প্রতিটি
-    //         কোর্সের সম্ভাবনা সম্পর্কে জানতে পারবেন। তাছাড়া সেমিনারে উপস্থিত
-    //         এক্সপার্ট কাউন্সেলরের সঙ্গে কথা বলে আপনি যথাযথ কোর্স বেছে নেওয়ার
-    //         সিদ্ধান্ত নিতে পারবেন সহজেই।
-    //       </p>
-    //       <h4>আপকামিং ফ্রি সেমিনার</h4>
-    //       <div className="card my-2">
-    //         <div className="card-body">
-    //           <h5 className="card-title">Digital Marketing_2</h5>
-    //           <p className="card-text">
-    //             With supporting text below as a natural lead-in to additional
-    //             content.
-    //           </p>
-    //           <a href="/" className="btn btn-primary">
-    //             Join
-    //           </a>
-    //         </div>
-    //       </div>
-    //       <div className="card my-2">
-    //         <div className="card-body">
-    //           <h5 className="card-title">Web Design and Development</h5>
-    //           <p className="card-text">
-    //             With supporting text below as a natural lead-in to additional
-    //             content.
-    //           </p>
-    //           <a href="/" className="btn btn-primary">
-    //             Join
-    //           </a>
-    //         </div>
-    //       </div>
-    //     </div>
-
-    //     <div className="col">
-    //       <img src={freeSeminar} alt="free seminar" className="img-fluid" />
-    //     </div>
-    //   </div>
-    // </div>
-
     <div className="container col-xxl-8 px-4 ">
       <div>
         <img
@@ -81,9 +34,19 @@ const FreeSeminar = () => {
             </h4>
             <h6 className="display-9">Date: 17 July 2022</h6>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">
+              {/* <button
+                type="button"
+                className="btn btn-primary btn-lg px-4 me-md-2"
+              >
                 Register Now
-              </button>
+              </button> */}
+              <a
+                className="btn btn-primary btn-lg"
+                href="https://forms.gle/K2n3QqBtLmTnMhQw8"
+                role="button"
+              >
+                Join Free Seminar
+              </a>
             </div>
           </div>
           <div className="mt-2">
@@ -92,9 +55,13 @@ const FreeSeminar = () => {
             </h4>
             <h6 className="display-9">Date: 17 July 2022</h6>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">
-                Register Now
-              </button>
+              <a
+                className="btn btn-primary btn-lg"
+                href="https://forms.gle/K2n3QqBtLmTnMhQw8"
+                role="button"
+              >
+                Join Free Seminar
+              </a>
             </div>
           </div>
         </div>

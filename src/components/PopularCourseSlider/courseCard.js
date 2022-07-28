@@ -32,7 +32,10 @@ const CourseCard = ({
                 Delete
               </button>
             ) : (
-              <a href="/" className="btn btn-primary">
+              <a
+                href="https://forms.gle/GPJ8nq5YDEsiYJgX9"
+                className="btn btn-primary"
+              >
                 Enroll Now
               </a>
             )}
