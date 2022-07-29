@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { AllTeachers } from "../../../App";
 import { RootApi } from "../../API_Request/ApiRequest";
 import ceo from "../../assets/CEO.JPG";
-import manager from "../../assets/ceoPhoto.jpg";
+import assDirector from "../../assets/alaminsir.jpg";
 import InstructorCard from "./InstructorCard";
 // import {TeacherAddedToast} from "../../helper/FormHelper"
 
@@ -34,7 +34,7 @@ const Instructor = () => {
       </div>
       <div className="card mb-3">
         <div className="row g-0">
-          <div className="col-md-2">
+          <div className="col-md-4">
             <img
               src={ceo}
               className="img-fluid rounded-start"
@@ -42,7 +42,7 @@ const Instructor = () => {
               // style={{ width: "200px", height: "250px" }}
             />
           </div>
-          <div className="col-md-10">
+          <div className="col-md-8">
             <div className="card-body">
               <h5 className="card-title">Engineer Mr. Jahidul Islam</h5>
               <p className="card-text">
@@ -66,14 +66,14 @@ const Instructor = () => {
       </div>
       <div className="card bg-info bg-gradient py-2 mb-3">
         <div className=" text-center ">
-          <h4>Manager</h4>
+          <h4>Assistant director</h4>
         </div>
       </div>
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">Manager Name</h5>
+              <h5 className="card-title">Shikder Mohammad Al-Amin</h5>
               <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -93,7 +93,7 @@ const Instructor = () => {
           </div>
           <div className="col-md-4">
             <img
-              src={manager}
+              src={assDirector}
               className="img-fluid rounded-start"
               alt="ceoPhoto"
             />
@@ -126,8 +126,6 @@ const Instructor = () => {
             </div>
           </div>
         )}
-
-        
       </div>
     </>
   );

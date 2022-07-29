@@ -6,6 +6,7 @@ import BackgroundImage from "./components/custom/background/BackgroundImage";
 // import EasyContact from "./components/easyContact/easyContact";
 import FreeSeminar from "./components/freeSeminar/freeSeminar";
 import NoticeForAdmission from "./components/NoticeForAdmission/NoticeForAdmission";
+import OurServices from "./components/OurServices/OurServices";
 // import Navigation from "./components/navigation/navigation";
 import PopularCourses from "./components/popularCourses/PopularCourses";
 import TeacherSlider from "./components/TeacherSlider/TeacherSlider";
@@ -33,6 +34,7 @@ function Home() {
         <TeacherSlider />
     
       <PopularCourses />
+      <OurServices/>
       <FreeSeminar />
     </div>
   );

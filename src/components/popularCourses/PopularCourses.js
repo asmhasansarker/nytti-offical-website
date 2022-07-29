@@ -21,7 +21,7 @@ const PopularCourses = () => {
             অনলাইন বা অফলাইনে কোর্সে এনরোল করতে পারবেন যেকোনো সময়।
           </p>
         </div>
-        <div className="container my-5">
+        <div className="container mt-5">
           <PopularCourseSlider />
         </div>
       </div>
