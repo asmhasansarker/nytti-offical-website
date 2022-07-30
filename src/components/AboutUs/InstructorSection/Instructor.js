@@ -44,22 +44,12 @@ const Instructor = () => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">Engineer Mr. Jahidul Islam</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.versions of Lorem Ipsum. Why do we use it? It is a long
-                established fact that a reader will be distracted by the
-                readable content of a page when looking at its layout. The point
-                of using Lorem Ipsum is that it has a more-or-less normal
-                distribution of letters, as opposed to using 'Content here,
-                content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem
-                Ipsum as their default model text, and a search for 'lorem
-                ipsum' will uncover many web sites still in their infancy.
-                Various versions have evolved over the years, sometimes by This
-                is a
-              </p>
+              <h5 className="card-title mb-3">Engineer Mr. Jahidul Islam</h5>
+              <h6>
+                CEO :  NYTTI - National Youth and Technical Training Institude
+              </h6>
+              <h6>Director General :  Love Bird Cafe & Restaurant Rooftop</h6>
+              <h6>Organizing Secretary :  Adamjee Teacher's Association -ATA</h6>
             </div>
           </div>
         </div>

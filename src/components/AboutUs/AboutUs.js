@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import aboutUsPhoto from '../assets/aboutUsPhoto.jpg'
+import OurBranch from '../OurBranch/OurBranch'
 import Instructor from './InstructorSection/Instructor'
 
 const AboutUs = () => {
@@ -25,6 +26,7 @@ const AboutUs = () => {
         </div>
       </div>
       <Instructor />
+      <OurBranch/>
     </div>
   );
 }
