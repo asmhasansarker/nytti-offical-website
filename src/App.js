@@ -34,10 +34,7 @@ const App = () => {
   });
 
 
-//  user = JSON.parse(localStorage.getItem("user"));
-//   if (user) {
-//     setUser(user);
-//   }
+
 
 
   const [appliedStudent, setAppliedStudent] = useState(null);

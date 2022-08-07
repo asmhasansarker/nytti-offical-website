@@ -12,8 +12,13 @@ const EasyContact = () => {
           <div className="col">
             <div className="row">
               <div className="col-5 text-white">
-                <FontAwesomeIcon icon={faPhone} className="me-2" />{" "}
-                +8801938713358
+                <FontAwesomeIcon icon={faPhone} className="me-2" />
+                <a
+                  href="tel:+8801938713358" 
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  +8801938713358
+                </a>
               </div>
               <div className="col-7 text-white">
                 <FontAwesomeIcon icon={faEnvelope} className="mx-2" />
@@ -22,9 +27,7 @@ const EasyContact = () => {
             </div>
           </div>
 
-          <div className="col  ">
-            
-          </div>
+          <div className="col  "></div>
         </div>
       </div>
     </div>
