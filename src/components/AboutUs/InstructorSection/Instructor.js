@@ -46,10 +46,25 @@ const Instructor = () => {
             <div className="card-body">
               <h5 className="card-title mb-3">Engineer Mr. Jahidul Islam</h5>
               <h6>
-                CEO :  NYTTI - National Youth and Technical Training Institude
+                CEO : NYTTI - National Youth and Technical Training Institude
               </h6>
-              <h6>Director General :  Love Bird Cafe & Restaurant Rooftop</h6>
-              <h6>Organizing Secretary :  Adamjee Teacher's Association -ATA</h6>
+              <h6>Director General : Love Bird Cafe & Restaurant Rooftop</h6>
+              <h6>Organizing Secretary : Adamjee Teacher's Association -ATA</h6>
+              <p>
+                In 2007, Engineer Mr. Jahidul Islam founded Genius Group of
+                Companies. Our family of companies comprises a range of
+                industries in Bangladesh, from logistics and real estate to
+                locomotives and packaging. But our core business, 100%
+                export-oriented ready-made garments (RMG) has been the main flag
+                bearer of the entire Group. We pioneered RMG production in
+                Bangladesh, both in technology and in new ways of doing business
+                such as the back-to-back letter of credit and bonded warehouse
+                systems. Today, we are stronger than ever, building on our past
+                successes and venturing in to newer markets, marking our
+                presence. Backed by our unblemished reputation and decades of
+                experience, we are committed to serving you with passion,
+                integrity and transparency.
+              </p>
             </div>
           </div>
         </div>

@@ -170,7 +170,7 @@ const PrintContent = React.forwardRef((props,ref) => {
           </tbody>
         </table>
 
-        <table className="table border-white" style={{marginTop:"70px"}}>
+        <table className="table border-white" style={{marginTop:"150px"}}>
           <tbody>
             <tr>
               <td >
