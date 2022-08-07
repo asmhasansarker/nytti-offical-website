@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import dateFormat from "dateformat";
 import { useContext } from 'react'
 import { AppliedStudentContext } from '../../../App'
 import formHeading from "../../assets/formHeading.png"
@@ -10,8 +11,8 @@ const PrintContent = React.forwardRef((props,ref) => {
   console.log(appliedStudent);
 
   
-    const { name, photo, fatherName, motherName, presentAddress, permanentAddress, nid, occupation,dateOfBirth, nationality, bloodGroup, gender, phone, email, guardiansPhone, relationshipWithGuardian, sscSchool, sscBoard, sscYear, sscGpa, hscSchool, hscBoard, hscYear, hscGpa, graduationUniversity, graduationBoard, graduationYear, graduationGpa, postGraduationUniversity, postGraduationBoard, postGraduationYear, postGraduationGpa, referenceName, referencePhone, referenceBatch, referenceRoll,relationWithReference } = appliedStudent
-      console.log(name);
+    let { name, photo, fatherName, motherName, presentAddress, permanentAddress, nid, occupation,dateOfBirth, nationality, bloodGroup, gender, phone, email, guardiansPhone, relationshipWithGuardian, sscSchool, sscBoard, sscYear, sscGpa, hscSchool, hscBoard, hscYear, hscGpa, graduationUniversity, graduationBoard, graduationYear, graduationGpa, postGraduationUniversity, postGraduationBoard, postGraduationYear, postGraduationGpa, referenceName, referencePhone, referenceBatch, referenceRoll,relationWithReference } = appliedStudent
+    dateOfBirth = dateFormat(dateOfBirth, "dS mmmm , yyyy");
     return (
      <Fragment>
         <div ref={ref} className='container'>
