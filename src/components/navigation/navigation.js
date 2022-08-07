@@ -120,6 +120,9 @@ function Navigation() {
                 <NavLink to="/applyNow" className="navItem nav-link">
                   Apply Now
                 </NavLink>
+                <NavLink to="/result" className="navItem nav-link">
+                  Result
+                </NavLink>
                 <NavLink to="/about-us" className="navItem nav-link">
                   About Us
                 </NavLink>

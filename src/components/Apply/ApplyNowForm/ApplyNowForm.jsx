@@ -10,6 +10,8 @@ import { RootApi } from "../../API_Request/ApiRequest";
 
 const ApplyNowForm = () => {
 
+  
+
   useEffect(() => {
     document.title="Apply Now"
   })
@@ -114,6 +116,7 @@ const ApplyNowForm = () => {
   }
   return (
     <div className='container'>
+      
       <h3 className='mt-5'>PERSONAL & CONTACT INFORMATION</h3>
       <div>
         <div className='row my-2'>

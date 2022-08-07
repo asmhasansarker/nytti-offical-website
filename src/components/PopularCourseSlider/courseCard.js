@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+// import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
 const CourseCard = ({
@@ -38,6 +39,11 @@ const CourseCard = ({
               >
                 Enroll Now
               </a>
+                // <Link to={`/applyNow/${id}`}>
+                //   <button className="btn btn-primary">
+                //     Enroll Now
+                //  </button>
+                // </Link>
             )}
           </div>
         </div>

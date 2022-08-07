@@ -1,13 +1,23 @@
 import axios from 'axios'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react'
+
 import { AllStudents } from '../../App'
 import { RootApi } from '../API_Request/ApiRequest'
+import Modal from "react-bootstrap/Modal";
+import UpdateStudentInfo from './UpdateStudentInfo/UpdateStudentInfo'
 
 const OurStudents = () => {
 
-    const [allStudents, setAllStudents] = useContext(AllStudents)
+  const [allStudents, setAllStudents] = useContext(AllStudents)
+  const [updateInfo , setUpdateInfo] = useState({})
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
+  
+  
     useEffect(() => {
         document.title="All Students"
         axios.get(`${RootApi}api/students`)
@@ -21,7 +31,15 @@ const OurStudents = () => {
       .delete(`${RootApi}api/students/${id}`)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
-    }
+  }
+  
+  const handleStudentUpdate = (id) => {
+
+    axios.get(`${RootApi}api/students/${id}`)
+        .then(res => setUpdateInfo(res.data))
+        .catch(err => console.log(err))
+    handleShow()
+  }
   return (
     <div className='container'>
       <table className="table table-bordered">
@@ -39,12 +57,12 @@ const OurStudents = () => {
                       allStudents.map((student, key) => {
                           return (
                                <tr key={student._id}>
-                                  <th scope="row">{ student._id }</th>
+                                  <th scope="row">{ student.id }</th>
                                   <td>{ student.name }</td>
                                     <td>{student.email}</td>
                                   <td>{ student.phone}</td>
                                   <td>
-                                      <button className="btn btn-outline-success me-2">Edit</button>
+                                      <button className="btn btn-outline-success me-2" onClick={() => handleStudentUpdate(student._id)}>Edit</button>
                                       <button className="btn btn-outline-danger" onClick={() => handleStudentDelete(student._id)}>Delete</button>
                                   </td>
                                     </tr>
@@ -56,7 +74,20 @@ const OurStudents = () => {
                    
            
         </tbody>
-        </table>
+      </table>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Update Info </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <UpdateStudentInfo
+            handleClose={handleClose}
+            studentInfo={updateInfo}
+            setUpdateInfo={setUpdateInfo}
+          />
+        </Modal.Body>
+        
+      </Modal>
     </div>
   )
 }
