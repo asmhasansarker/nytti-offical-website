@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import teacher from "../assets/ceoPhoto.jpg";
+import teacher1 from "../assets/CEO.JPG";
+import teacher2 from "../assets/ceo2.jpg";
+// import teacher3 from "../assets/ceo3.jpg";
+import teacher3 from "../assets/alaminsir.jpg";
 import "./TeacherSlider.css"
 
 export default class TeacherSlider extends Component {
@@ -20,37 +23,42 @@ export default class TeacherSlider extends Component {
           <Slider {...settings}>
             <div>
               <img
-                src={teacher}
+                src={teacher1}
                 className="img-fluid img-thumbnail"
                 alt="..."
+                style={{ width: "250px" }}
               />
             </div>
             <div>
               <img
-                src={teacher}
+                src={teacher2}
                 className="img-fluid img-thumbnail"
                 alt="..."
+                style={{ width: "250px" }}
               />
             </div>
             <div>
               <img
-                src={teacher}
+                src={teacher3}
                 className="img-fluid img-thumbnail"
                 alt="..."
+                style={{ width: "250px" }}
               />
             </div>
             <div>
               <img
-                src={teacher}
+                src={teacher1}
                 className="img-fluid img-thumbnail"
                 alt="..."
+                style={{ width: "250px" }}
               />
             </div>
             <div>
               <img
-                src={teacher}
+                src={teacher2}
                 className="img-fluid img-thumbnail"
                 alt="..."
+                style={{ width: "250px" }}
               />
             </div>
           </Slider>
