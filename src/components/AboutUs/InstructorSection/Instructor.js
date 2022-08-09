@@ -48,6 +48,7 @@ const Instructor = () => {
               <h6>
                 CEO : NYTTI - National Youth and Technical Training Institude
               </h6>
+              <h6>Chairman : Genius Group</h6>
               <h6>Director General : Love Bird Cafe & Restaurant Rooftop</h6>
               <h6>Organizing Secretary : Adamjee Teacher's Association -ATA</h6>
               <p>

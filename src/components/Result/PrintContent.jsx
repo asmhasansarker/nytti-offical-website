@@ -116,7 +116,7 @@ const PrintContent = React.forwardRef((props,ref) => {
        
 
         <div className='bg-info py-1'>
-          <h5>www.nytti.com.bd</h5>
+          <h5>www.nyttibd.com</h5>
         </div>
             
         </div>
