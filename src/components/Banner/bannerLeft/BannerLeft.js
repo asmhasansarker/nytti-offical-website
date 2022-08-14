@@ -19,13 +19,13 @@ const BannerLeft = () => {
       </div>
       <div>
         <Link to="/courses">
-          <button type="button" className="btn btn-outline-primary me-2 btn-lg">
+          <button type="button" className="btn btn-outline-primary me-2 btn-lg mt-2">
             Browse Course
           </button>
         </Link>
 
         <a
-          className="btn btn-outline-success btn-lg"
+          className="btn btn-outline-success btn-lg mt-2"
           href="https://forms.gle/K2n3QqBtLmTnMhQw8"
           role="button"
         >
