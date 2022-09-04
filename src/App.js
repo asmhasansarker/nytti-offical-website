@@ -29,8 +29,8 @@ export const AllCourses = createContext();
 // const getToken = false;
 const App = () => {
   let [user, setUser] = useState({
-    isSignedIn: false,
-    role: "user",
+    isSignedIn: true,
+    role: "admin",
   });
 
 
