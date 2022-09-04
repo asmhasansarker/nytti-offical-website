@@ -64,7 +64,7 @@ function Navigation() {
               src={trainingCenterLogo}
               alt="logo"
               className="img-fluid"
-              style={{ width: "110px", height: "64px" }}
+              style={{ width: "110px", height: "74px" }}
             />
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
