@@ -31,7 +31,7 @@ const ApplyNowForm = () => {
 
       
   
-  let nameRef,fatherNameRef, motherNameRef, presentAddressRef, permanentAddressRef, nidRef, occupationRef,
+  let nameOfCourseRef,nameRef,fatherNameRef, motherNameRef, presentAddressRef, permanentAddressRef, nidRef, occupationRef,
     nationalityRef, bloodGroupRef, genderRef, phoneRef, emailRef, guardiansPhoneRef, relationshipWithGuardianRef, sscSchoolRef, sscBoardRef, sscYearRef, sscGpaRef, hscSchoolRef, hscBoardRef, hscYearRef, hscGpaRef, graduationUniversityRef, graduationBoardRef, graduationYearRef, graduationGpaRef, postGraduationUniversityRef, postGraduationBoardRef, postGraduationYearRef, postGraduationGpaRef, referenceNameRef, referencePhoneRef, referenceBatchRef, referenceRollRef, relationWithReferenceRef = useRef()
   
   
@@ -52,6 +52,7 @@ const ApplyNowForm = () => {
   
   const SubmitLogin = async() => {
 
+    let nameOfCourse = nameOfCourseRef.value;
     let name = nameRef.value;
     let fatherName = fatherNameRef.value;
     let motherName = motherNameRef.value;
@@ -93,12 +94,12 @@ const ApplyNowForm = () => {
       
     let photo = await imgFunc();
     
-    console.log(photo);
+    // console.log(photo);
     let newStudentInfo = {
-      name,photo,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
+      nameOfCourse,name,photo,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
     }
 
-
+    console.log(newStudentInfo)
 
   await axios.post(`${RootApi}api/students`, {
     ...newStudentInfo
@@ -116,8 +117,10 @@ const ApplyNowForm = () => {
   }
   return (
     <div className='container'>
+      <h3 className='mt-5'>Course Name</h3>
+      <div className='col'><input ref={(input) => nameOfCourseRef = input} placeholder="Course Name" className="form-control animated fadeInUp" type="text" /></div>
       
-      <h3 className='mt-5'>PERSONAL & CONTACT INFORMATION</h3>
+      <h3 className='mt-1'>PERSONAL & CONTACT INFORMATION</h3>
       <div>
         <div className='row my-2'>
           <div className='col'><input ref={(input) => nameRef = input} placeholder="Student Name" className="form-control animated fadeInUp" type="text" /></div>
