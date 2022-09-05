@@ -11,7 +11,7 @@ const OurStudents = () => {
 
   const [allStudents, setAllStudents] = useContext(AllStudents)
   const [updateInfo , setUpdateInfo] = useState({})
-
+  const [fullscreen] = useState(true);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -38,6 +38,7 @@ const OurStudents = () => {
     axios.get(`${RootApi}api/students/${id}`)
         .then(res => setUpdateInfo(res.data))
         .catch(err => console.log(err))
+    // setFullscreen(breakpoint);
     handleShow()
   }
   return (
@@ -75,9 +76,9 @@ const OurStudents = () => {
            
         </tbody>
       </table>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} fullscreen={fullscreen} >
         <Modal.Header closeButton>
-          <Modal.Title>Update Info </Modal.Title>
+          <Modal.Title> Update Info </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <UpdateStudentInfo

@@ -31,7 +31,7 @@ const ApplyNowForm = () => {
 
       
   
-  let nameOfCourseRef,nameRef,fatherNameRef, motherNameRef, presentAddressRef, permanentAddressRef, nidRef, occupationRef,
+  let studentIdRef,nameOfCourseRef,nameRef,fatherNameRef, motherNameRef, presentAddressRef, permanentAddressRef, nidRef, occupationRef,
     nationalityRef, bloodGroupRef, genderRef, phoneRef, emailRef, guardiansPhoneRef, relationshipWithGuardianRef, sscSchoolRef, sscBoardRef, sscYearRef, sscGpaRef, hscSchoolRef, hscBoardRef, hscYearRef, hscGpaRef, graduationUniversityRef, graduationBoardRef, graduationYearRef, graduationGpaRef, postGraduationUniversityRef, postGraduationBoardRef, postGraduationYearRef, postGraduationGpaRef, referenceNameRef, referencePhoneRef, referenceBatchRef, referenceRollRef, relationWithReferenceRef = useRef()
   
   
@@ -52,6 +52,7 @@ const ApplyNowForm = () => {
   
   const SubmitLogin = async() => {
 
+    let id = studentIdRef.value;
     let nameOfCourse = nameOfCourseRef.value;
     let name = nameRef.value;
     let fatherName = fatherNameRef.value;
@@ -96,7 +97,7 @@ const ApplyNowForm = () => {
     
     // console.log(photo);
     let newStudentInfo = {
-      nameOfCourse,name,photo,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
+      id,nameOfCourse,name,photo,fatherName,motherName,presentAddress,permanentAddress,nid,occupation,dateOfBirth,nationality,bloodGroup,gender,phone,email,guardiansPhone,relationshipWithGuardian,sscSchool,sscBoard,sscYear,sscGpa,hscSchool,hscBoard,hscYear,hscGpa,graduationUniversity,graduationBoard,graduationYear,graduationGpa,postGraduationUniversity,postGraduationBoard,postGraduationYear,postGraduationGpa,referenceName,referencePhone,referenceBatch,referenceRoll,relationWithReference
     }
 
     console.log(newStudentInfo)
@@ -118,7 +119,11 @@ const ApplyNowForm = () => {
   return (
     <div className='container'>
       <h3 className='mt-5'>Course Name</h3>
-      <div className='col'><input ref={(input) => nameOfCourseRef = input} placeholder="Course Name" className="form-control animated fadeInUp" type="text" /></div>
+      <div className="row my-2">
+        <div className='col'><input ref={(input) => nameOfCourseRef = input} placeholder="Course Name" className="form-control animated fadeInUp" type="text" /></div>
+        <div className='col'><input ref={(input) => studentIdRef = input} placeholder="Student Id" className="form-control animated fadeInUp" type="text" /></div>
+      </div>
+      
       
       <h3 className='mt-1'>PERSONAL & CONTACT INFORMATION</h3>
       <div>

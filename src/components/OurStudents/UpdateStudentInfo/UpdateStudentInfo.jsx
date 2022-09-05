@@ -28,8 +28,11 @@ const UpdateStudentInfo = ({studentInfo,handleClose, setUpdateInfo}) => {
    
 
   return (
-      <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicName">
+    <Form onSubmit={handleSubmit}>
+      <div className='row'>
+
+      
+      <Form.Group className="mb-3 col" controlId="formBasicName">
         <Form.Label>Name Of Degree/Course </Form.Label>
         <Form.Control
           value={studentInfo.nameOfCourse}
@@ -39,7 +42,17 @@ const UpdateStudentInfo = ({studentInfo,handleClose, setUpdateInfo}) => {
           onChange={handleChange}
         />
       </Form.Group>
-
+      <Form.Group className="mb-3 col" controlId="formBasicName">
+        <Form.Label>Name Of Degree/Course </Form.Label>
+        <Form.Control
+          value={studentInfo.nameOfCourse}
+          type="text"
+          name="nameOfCourse"
+          placeholder="Name of course"
+          onChange={handleChange}
+        />
+      </Form.Group>
+      </div>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Duration</Form.Label>
         <Form.Control
