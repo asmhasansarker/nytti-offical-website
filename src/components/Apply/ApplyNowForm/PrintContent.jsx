@@ -95,9 +95,13 @@ const PrintContent = React.forwardRef((props,ref) => {
           </tbody>
         </table>
 
-        <h5>Educational Background</h5>
-
-        <table className="table table-bordered">
+          {
+            sscSchool !=="" && ( <h5>Educational Background</h5>)
+          }
+        
+          {
+            sscSchool !== "" && (
+<table className="table table-bordered">
           <tbody>
             <tr>
               <th>Degree</th>
@@ -105,21 +109,34 @@ const PrintContent = React.forwardRef((props,ref) => {
               <th>Board</th>
               <th>Year of Passing</th>
               <th>Division / GPA</th>
-            </tr>
-            <tr>
+              </tr>
+              
+              {
+                sscSchool !== "" && (
+                <tr>
               <td>S.S.C/O Level</td>
                 <td>{ sscSchool}</td>
               <td>{sscBoard}</td>
                 <td>{ sscYear}</td>
               <td>{sscGpa}</td>
-            </tr>
-            <tr>
+              </tr>
+                )
+              }
+            
+              {
+                hscSchool !== "" && (
+              <tr>
               <td>H.S.C/ Diploma</td>
                 <td>{ hscSchool}</td>
               <td>{hscBoard}</td>
                 <td>{ hscYear }</td>
                 <td>{ hscGpa }</td>
               </tr>
+                )
+              }
+
+
+           
               {
                 graduationUniversity !== ""  && (
                   <tr>
@@ -148,6 +165,9 @@ const PrintContent = React.forwardRef((props,ref) => {
            
           </tbody>
         </table>
+            )
+          }
+        
 
          <h5>Reference Details</h5>
         <table className="table table-bordered">
@@ -169,7 +189,15 @@ const PrintContent = React.forwardRef((props,ref) => {
             </tr>
            
           </tbody>
-        </table>
+          </table>
+          
+          {
+            sscSchool === "" && (
+              <div className='py-5' style={{marginTop:"100px"}}>
+                <h2 style={{display:"none"}}>Hidden Content</h2>
+              </div>
+            )
+          }
 
         <table className="table border-white" style={{marginTop:"150px"}}>
           <tbody>
