@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import aboutUsPhoto from '../assets/aboutUsPhoto.jpg'
+// import aboutUsPhoto from '../assets/aboutUsPhoto.jpg'
 import OurBranch from '../OurBranch/OurBranch'
+import AboutUsSlider from './AboutUsSlider'
 import Instructor from './InstructorSection/Instructor'
 
 const AboutUs = () => {
@@ -10,7 +11,11 @@ const AboutUs = () => {
   return (
     <div className="container">
       <div className="card mb-3">
-        <img src={aboutUsPhoto} className="card-img-top" alt="aboutUsPhoto" style={{width:"100%",height:"250px"}}/>
+        {/* <img src={aboutUsPhoto} className="card-img-top" alt="aboutUsPhoto" style={{width:"100%",height:"250px"}}/> */}
+        <div >
+
+        <AboutUsSlider/>
+        </div>
         <div className="card-body">
           <div className="card-title bg-info bg-gradient py-3 mb-3 mt-3 w-100">
             <div className=" text-center ">
